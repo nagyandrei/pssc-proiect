@@ -1,0 +1,9 @@
+C:\Users\Andrei\source\repos\proiect pssc\proiect pssc\bin\Debug\proiect pssc.exe.config
+C:\Users\Andrei\source\repos\proiect pssc\proiect pssc\bin\Debug\proiect pssc.exe
+C:\Users\Andrei\source\repos\proiect pssc\proiect pssc\bin\Debug\proiect pssc.pdb
+C:\Users\Andrei\source\repos\proiect pssc\proiect pssc\obj\Debug\proiect pssc.csprojResolveAssemblyReference.cache
+C:\Users\Andrei\source\repos\proiect pssc\proiect pssc\obj\Debug\proiect pssc.csproj.CoreCompileInputs.cache
+C:\Users\Andrei\source\repos\proiect pssc\proiect pssc\obj\Debug\proiect pssc.exe
+C:\Users\Andrei\source\repos\proiect pssc\proiect pssc\obj\Debug\proiect pssc.pdb
+C:\Users\Andrei\source\repos\proiect pssc\proiect pssc\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Andrei\source\repos\proiect pssc\proiect pssc\bin\Debug\Newtonsoft.Json.xml
