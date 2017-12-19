@@ -1,0 +1,10 @@
+C:\Users\Andrei\source\repos\proiect pssc\Model.Dealer\bin\Debug\Model.Dealer.dll
+C:\Users\Andrei\source\repos\proiect pssc\Model.Dealer\bin\Debug\Model.Dealer.pdb
+C:\Users\Andrei\source\repos\proiect pssc\Model.Dealer\bin\Debug\Model.Generic.dll
+C:\Users\Andrei\source\repos\proiect pssc\Model.Dealer\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Andrei\source\repos\proiect pssc\Model.Dealer\bin\Debug\Model.Generic.pdb
+C:\Users\Andrei\source\repos\proiect pssc\Model.Dealer\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Andrei\source\repos\proiect pssc\Model.Dealer\obj\Debug\Model.Dealer.csprojResolveAssemblyReference.cache
+C:\Users\Andrei\source\repos\proiect pssc\Model.Dealer\obj\Debug\Model.Dealer.csproj.CoreCompileInputs.cache
+C:\Users\Andrei\source\repos\proiect pssc\Model.Dealer\obj\Debug\Model.Dealer.dll
+C:\Users\Andrei\source\repos\proiect pssc\Model.Dealer\obj\Debug\Model.Dealer.pdb

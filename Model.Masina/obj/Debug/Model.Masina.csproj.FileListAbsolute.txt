@@ -1,0 +1,13 @@
+C:\Users\Andrei\source\repos\proiect pssc\Model.Masina\bin\Debug\Model.Masina.dll
+C:\Users\Andrei\source\repos\proiect pssc\Model.Masina\bin\Debug\Model.Masina.pdb
+C:\Users\Andrei\source\repos\proiect pssc\Model.Masina\bin\Debug\Model.Generic.dll
+C:\Users\Andrei\source\repos\proiect pssc\Model.Masina\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Andrei\source\repos\proiect pssc\Model.Masina\bin\Debug\proiect pssc.exe
+C:\Users\Andrei\source\repos\proiect pssc\Model.Masina\bin\Debug\Model.Generic.pdb
+C:\Users\Andrei\source\repos\proiect pssc\Model.Masina\bin\Debug\proiect pssc.pdb
+C:\Users\Andrei\source\repos\proiect pssc\Model.Masina\bin\Debug\proiect pssc.exe.config
+C:\Users\Andrei\source\repos\proiect pssc\Model.Masina\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Andrei\source\repos\proiect pssc\Model.Masina\obj\Debug\Model.Masina.csprojResolveAssemblyReference.cache
+C:\Users\Andrei\source\repos\proiect pssc\Model.Masina\obj\Debug\Model.Masina.csproj.CoreCompileInputs.cache
+C:\Users\Andrei\source\repos\proiect pssc\Model.Masina\obj\Debug\Model.Masina.dll
+C:\Users\Andrei\source\repos\proiect pssc\Model.Masina\obj\Debug\Model.Masina.pdb

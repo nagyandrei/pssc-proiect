@@ -3,9 +3,11 @@ using Model.Generic;
 using Model.Masina;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+
 
 namespace AdministratorParc
 {
@@ -15,7 +17,10 @@ namespace AdministratorParc
         public PlainText Prenume { get; private set; }
         public List<Masina> ListaDeMasini { get; private set; }
         public List<Dealer> ListaDealeri { get; private set; }
-        
+
+        private readonly List<Eveniment> _evenimenteNoi = new List<Eveniment>();
+        public ReadOnlyCollection<Eveniment> EvenimenteNoi => _evenimenteNoi.AsReadOnly();
+
         //something with parc auto 
         public Administrator(PlainText nume, PlainText prenume)
         {
@@ -23,9 +28,12 @@ namespace AdministratorParc
             Prenume = prenume;
         }
 
-        public void AdaugaMasina()
+        public void AdaugaMasina(Masina masina)
         {
-            //methond to be implemented
+            ListaDeMasini.Add(masina);
+            var e = new EvenimentGeneric<Masina>(masina.Id, TipEveniment.AdaugareMasina, masina);
+          //  Aplica(e);
+            PublicaEveniment(e);
         }
 
         public void AdaugaDealer()
@@ -69,6 +77,11 @@ namespace AdministratorParc
         {
             //methond to be implemented
         }
-
+        protected void PublicaEveniment(Eveniment eveniment)
+        {
+            _evenimenteNoi.Add(eveniment);
+            //EvenimentMeci?.Invoke(this, eveniment);
+            MagistralaEvenimente.Instanta.Value.Trimite(eveniment);
+        }
     }
 }

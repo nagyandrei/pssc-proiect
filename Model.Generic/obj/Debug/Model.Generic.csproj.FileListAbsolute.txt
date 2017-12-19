@@ -1,0 +1,7 @@
+C:\Users\Andrei\source\repos\proiect pssc\Model.Generic\bin\Debug\Model.Generic.dll
+C:\Users\Andrei\source\repos\proiect pssc\Model.Generic\bin\Debug\Model.Generic.pdb
+C:\Users\Andrei\source\repos\proiect pssc\Model.Generic\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Andrei\source\repos\proiect pssc\Model.Generic\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Andrei\source\repos\proiect pssc\Model.Generic\obj\Debug\Model.Generic.csproj.CoreCompileInputs.cache
+C:\Users\Andrei\source\repos\proiect pssc\Model.Generic\obj\Debug\Model.Generic.dll
+C:\Users\Andrei\source\repos\proiect pssc\Model.Generic\obj\Debug\Model.Generic.pdb

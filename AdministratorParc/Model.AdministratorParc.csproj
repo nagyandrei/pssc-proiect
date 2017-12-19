@@ -59,6 +59,10 @@
       <Project>{F9D860A9-8C60-42B9-B4F0-57FD12C3C3AD}</Project>
       <Name>Model.Masina</Name>
     </ProjectReference>
+    <ProjectReference Include="..\proiect pssc\proiect pssc.csproj">
+      <Project>{92D386AA-5892-4B21-8861-3605333E23BD}</Project>
+      <Name>proiect pssc</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

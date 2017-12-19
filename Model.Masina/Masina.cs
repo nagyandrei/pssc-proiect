@@ -1,6 +1,7 @@
 ﻿using Model.Generic;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -9,6 +10,7 @@ namespace Model.Masina
 {
     public class Masina
     {
+        public Guid Id { get; private set; }
         public TipMasina Tip { get; private set; }
         public PlainText Marca { get; private set; }
         public PlainText An { get; private set; }
@@ -18,8 +20,9 @@ namespace Model.Masina
         public PlainText Culoare { get; private set; }
         public PlainText Putere { get; private set; }
         public PlainText CapacitateCilindrica { get; private set; }
-        public Masina(TipMasina tip, PlainText marca, PlainText an, PlainText km, PlainText motorizare, PlainText cc, PlainText putere, PlainText culoare, PlainText descriere)
+        public Masina(Guid id, TipMasina tip, PlainText marca, PlainText an, PlainText km, PlainText motorizare, PlainText cc, PlainText putere, PlainText culoare, PlainText descriere)
         {
+            Id = id;
             Tip = tip;
             Marca = marca;
             An = an;
@@ -29,6 +32,9 @@ namespace Model.Masina
             CapacitateCilindrica = cc;
             Culoare = culoare;
         }
+
+        private readonly List<Eveniment> _evenimenteNoi = new List<Eveniment>();
+        public ReadOnlyCollection<Eveniment> EvenimenteNoi { get => _evenimenteNoi.AsReadOnly(); }
 
         public override string ToString()
         {
@@ -40,6 +46,17 @@ namespace Model.Masina
             return base.GetHashCode();
         }
 
-
+        private void Aplica(EvenimentGeneric<Masina> e)
+        {
+            Id = e.Detalii.Id;
+            Tip = e.Detalii.Tip;
+            Marca = e.Detalii.Marca;
+            An = e.Detalii.An;
+            Kilometraj = e.Detalii.Kilometraj;
+            Descriere = e.Detalii.Descriere;
+            Motorizare = e.Detalii.Motorizare;
+            CapacitateCilindrica = e.Detalii.CapacitateCilindrica;
+            Culoare = e.Detalii.Culoare;
+        }
     }
 }

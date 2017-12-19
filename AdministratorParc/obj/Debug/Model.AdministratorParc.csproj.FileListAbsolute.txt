@@ -1,0 +1,17 @@
+C:\Users\Andrei\source\repos\proiect pssc\AdministratorParc\bin\Debug\AdministratorParc.dll
+C:\Users\Andrei\source\repos\proiect pssc\AdministratorParc\bin\Debug\AdministratorParc.pdb
+C:\Users\Andrei\source\repos\proiect pssc\AdministratorParc\bin\Debug\Model.Dealer.dll
+C:\Users\Andrei\source\repos\proiect pssc\AdministratorParc\bin\Debug\Model.Generic.dll
+C:\Users\Andrei\source\repos\proiect pssc\AdministratorParc\bin\Debug\Model.Masina.dll
+C:\Users\Andrei\source\repos\proiect pssc\AdministratorParc\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Andrei\source\repos\proiect pssc\AdministratorParc\bin\Debug\proiect pssc.exe
+C:\Users\Andrei\source\repos\proiect pssc\AdministratorParc\bin\Debug\Model.Dealer.pdb
+C:\Users\Andrei\source\repos\proiect pssc\AdministratorParc\bin\Debug\Model.Generic.pdb
+C:\Users\Andrei\source\repos\proiect pssc\AdministratorParc\bin\Debug\Model.Masina.pdb
+C:\Users\Andrei\source\repos\proiect pssc\AdministratorParc\bin\Debug\proiect pssc.pdb
+C:\Users\Andrei\source\repos\proiect pssc\AdministratorParc\bin\Debug\proiect pssc.exe.config
+C:\Users\Andrei\source\repos\proiect pssc\AdministratorParc\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Andrei\source\repos\proiect pssc\AdministratorParc\obj\Debug\Model.AdministratorParc.csprojResolveAssemblyReference.cache
+C:\Users\Andrei\source\repos\proiect pssc\AdministratorParc\obj\Debug\Model.AdministratorParc.csproj.CoreCompileInputs.cache
+C:\Users\Andrei\source\repos\proiect pssc\AdministratorParc\obj\Debug\AdministratorParc.dll
+C:\Users\Andrei\source\repos\proiect pssc\AdministratorParc\obj\Debug\AdministratorParc.pdb
