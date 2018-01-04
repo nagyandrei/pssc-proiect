@@ -34,6 +34,33 @@ namespace Model.Masina
             Culoare = culoare;
         }
 
+        public void VizualizareMasina()
+        {
+
+            //methond to be implemented
+
+        }
+
+        public void EditareMasina()
+        {
+            //methond to be implemented
+        }
+
+        public void StergereMasina()
+        {
+            //methond to be implemented
+        }
+
+        public void VizualizareRapoarte()
+        {
+            //methond to be implemented
+        }
+
+        public void AprobareNegociere()
+        {
+            //methond to be implemented
+        }
+
         private readonly List<Eveniment> _evenimenteNoi = new List<Eveniment>();
         public ReadOnlyCollection<Eveniment> EvenimenteNoi { get => _evenimenteNoi.AsReadOnly(); }
 

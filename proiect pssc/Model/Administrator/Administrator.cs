@@ -44,32 +44,6 @@ namespace AdministratorParc
             //methond to be implemented
         }
 
-        public void VizualizareMasina()
-        {
-
-            //methond to be implemented
-
-        }
-
-        public void EditareMasina()
-        {
-            //methond to be implemented
-        }
-
-        public void StergereMasina()
-        {
-            //methond to be implemented
-        }
-
-        public void VizualizareRapoarte()
-        {
-            //methond to be implemented
-        }
-
-        public void AprobareNegociere()
-        {
-            //methond to be implemented
-        }
 
         public void ViziualizareRaportDealer()
         {
