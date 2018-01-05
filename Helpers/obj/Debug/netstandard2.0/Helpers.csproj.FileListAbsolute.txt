@@ -1,0 +1,9 @@
+C:\Users\Andrei\Documents\GitHub\pssc-proiect\Helpers\bin\Debug\netstandard2.0\Helpers.deps.json
+C:\Users\Andrei\Documents\GitHub\pssc-proiect\Helpers\bin\Debug\netstandard2.0\Helpers.dll
+C:\Users\Andrei\Documents\GitHub\pssc-proiect\Helpers\bin\Debug\netstandard2.0\Helpers.pdb
+C:\Users\Andrei\Documents\GitHub\pssc-proiect\Helpers\obj\Debug\netstandard2.0\Helpers.csprojResolveAssemblyReference.cache
+C:\Users\Andrei\Documents\GitHub\pssc-proiect\Helpers\obj\Debug\netstandard2.0\Helpers.csproj.CoreCompileInputs.cache
+C:\Users\Andrei\Documents\GitHub\pssc-proiect\Helpers\obj\Debug\netstandard2.0\Helpers.AssemblyInfoInputs.cache
+C:\Users\Andrei\Documents\GitHub\pssc-proiect\Helpers\obj\Debug\netstandard2.0\Helpers.AssemblyInfo.cs
+C:\Users\Andrei\Documents\GitHub\pssc-proiect\Helpers\obj\Debug\netstandard2.0\Helpers.dll
+C:\Users\Andrei\Documents\GitHub\pssc-proiect\Helpers\obj\Debug\netstandard2.0\Helpers.pdb
