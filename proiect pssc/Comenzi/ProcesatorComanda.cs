@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace proiect_pssc.Comenzi
 {
-    class ProcesatorComanda
+    public abstract class ProcesatorComanda
     {
+        public abstract void Proceseaza(Comanda comanda);
     }
 }

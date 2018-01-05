@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace proiect_pssc.Comenzi
 {
-    class ProcesatorComandaVindeMasina
+    public class ProcesatorComandaVindeMasina : ProcesatorComandaGeneric<ComandaVindeMasina>
     {
+        public override void Proceseaza(ComandaVindeMasina comanda)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

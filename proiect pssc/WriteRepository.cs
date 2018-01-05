@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace proiect_pssc
 {
-    class WriteRepository
+    public class WriteRepository
     {
     }
 }

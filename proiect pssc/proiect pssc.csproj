@@ -45,6 +45,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Comenzi\Comanda.cs" />
+    <Compile Include="Comenzi\ComandaAdaugaMasina.cs" />
+    <Compile Include="Comenzi\ComandaCautaMasina.cs" />
+    <Compile Include="Comenzi\ComandaEditeazaMasina.cs" />
+    <Compile Include="Comenzi\ComandaRezervaMasina.cs" />
+    <Compile Include="Comenzi\ComandaVindeMasina.cs" />
+    <Compile Include="Comenzi\MagistralaComenzi.cs" />
+    <Compile Include="Comenzi\MagistralaComenziEx.cs" />
+    <Compile Include="Comenzi\ProcesatorComanda.cs" />
+    <Compile Include="Comenzi\ProcesatorComandaAdaugaMasina.cs" />
+    <Compile Include="Comenzi\ProcesatorComandaCautaMasina.cs" />
+    <Compile Include="Comenzi\ProcesatorComandaEditeazaMasina.cs" />
+    <Compile Include="Comenzi\ProcesatorComandaGeneric.cs" />
+    <Compile Include="Comenzi\ComandaStergeMasina.cs" />
+    <Compile Include="Comenzi\ProcesatorComandaRezervaMasina.cs" />
+    <Compile Include="Comenzi\ProcesatorComandaStergeMasina.cs" />
+    <Compile Include="Comenzi\ProcesatorComandaVindeMasina.cs" />
     <Compile Include="Evenimente\Eveniment.cs" />
     <Compile Include="Evenimente\MagistralaEvenimente.cs" />
     <Compile Include="Evenimente\ProcesatorEvenimente.cs" />
@@ -54,9 +71,12 @@
     <Compile Include="Model\Dealer\Dealer.cs" />
     <Compile Include="Model\Generic.cs" />
     <Compile Include="Model\Masina\Masina.cs" />
+    <Compile Include="Model\Masina\StareMasina.cs" />
     <Compile Include="Model\Masina\TipMasina.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReadRepository.cs" />
+    <Compile Include="WriteRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

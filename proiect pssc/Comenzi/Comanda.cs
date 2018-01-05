@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace proiect_pssc.Comenzi
 {
-    class Comanda
+    public abstract class Comanda
     {
     }
 }
