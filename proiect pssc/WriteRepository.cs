@@ -32,21 +32,31 @@ namespace proiect_pssc
             return masina;
         }
 
-        public void SalvareEvenimente(Masina masina)
+        //public void SalvareEvenimente(ReadOnlyCollection<Eveniment> e)
+        //{
+        //    this.SalvareEvenimente(e);
+        //}
+        
+        public Masina GasesteMasina(Guid idMasina)
         {
-            SalvareEvenimente(masina.EvenimenteNoi);
+            //load events
+            //   var evenimenteMasina = IncarcaListaDeEvenimente()
+            //                         .Where(e => e.IdRadacina == idMasina);
+
+            //creare meci din evenimente
+            //  return new Masina(evenimenteMasina);
+            return null;
         }
 
-
-        private void SalvareEvenimente(ReadOnlyCollection<Eveniment> evenimenteNoi)
+        public void SalvareEvenimente(Eveniment evenimenteNoi)
         {
-            List<Eveniment> toateEvenimentele = IncarcaListaDeEvenimente(null);
-            toateEvenimentele.AddRange(evenimenteNoi);
-           // String detalii= JsonConvert.SerializeObject(toateEvenimentele); ///aci te uiti
-            string detalii;
-            var tipEveniment="ceva tip";
-            detalii = "rip eveniment";
-            var idRadacina = "AR18VAD";
+           // List<Eveniment> toateEvenimentele = IncarcaListaDeEvenimente(null);
+           // toateEvenimentele.AddRange(evenimenteNoi);
+            String detalii= JsonConvert.SerializeObject(evenimenteNoi); ///
+            //string detalii;
+            var tipEveniment=evenimenteNoi.Tip;
+           
+            var idRadacina="codul masinii";
 
             using (var cn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename" +
               @"='C:\Users\Andrei\Documents\GitHub\pssc-proiect\IterfataUtilizator\App_Data\Users.mdf';Integrated Security=True"))

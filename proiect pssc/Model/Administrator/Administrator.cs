@@ -39,6 +39,7 @@ namespace AdministratorParc
             var e = new EvenimentGeneric<Masina>(masina.Id, TipEveniment.AdaugareMasina, masina);
             Aplica(e);
             PublicaEveniment(e);
+          
            
         }
 

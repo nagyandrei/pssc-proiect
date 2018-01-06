@@ -72,6 +72,7 @@
     <Compile Include="Model\Client\Client.cs" />
     <Compile Include="Model\Dealer\Dealer.cs" />
     <Compile Include="Model\Generic.cs" />
+    <Compile Include="Model\Masina\EvenimentNecunoscutException.cs" />
     <Compile Include="Model\Masina\Masina.cs" />
     <Compile Include="Model\Masina\StareMasina.cs" />
     <Compile Include="Model\Masina\TipMasina.cs" />

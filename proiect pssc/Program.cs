@@ -29,7 +29,7 @@ namespace proiect_pssc
             var comandaAdaugaMasina = new ComandaAdaugaMasina();
             MagistralaComenzi.Instanta.Value.Trimite(comandaAdaugaMasina);
             var writeRepo = new WriteRepository();
-            writeRepo.SalvareEvenimente(masina);
+          //  writeRepo.SalvareEvenimente(masina);
 
             var readRepo = new ReadRepository();
             readRepo.IncarcaListaDeEvenimente();

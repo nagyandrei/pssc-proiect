@@ -29,7 +29,8 @@ namespace proiect_pssc
                 {
                     while (reader.Read())
                     {
-                        Console.WriteLine(String.Format("{0} {1} {2} {3}", reader["id"],reader["TipEveniment"],reader["DetaliiEveniment"],reader["IdRadacina"]));
+                        toateEvenimentele = JsonConvert.DeserializeObject<List<Eveniment>>(reader["DetaliiEveniment"].ToString());
+                        Console.WriteLine(String.Format("{0}   {1}   {2}   {3}", reader["id"],reader["TipEveniment"],reader["DetaliiEveniment"],reader["IdRadacina"]));
                     }
                 }
                 

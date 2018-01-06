@@ -42,6 +42,14 @@ namespace Model.Masina
             Culoare = culoare;
         }
 
+        public Masina(IEnumerable<Eveniment> evenimente)
+        {
+            foreach (var e in evenimente)
+            {
+                RedaEveniment(e);
+            }
+        }
+
         //public void VizualizareMasina(Masina masina)
         //{
 
@@ -131,6 +139,36 @@ namespace Model.Masina
         //    Culoare = e.Detalii.Culoare;
         //    stare = StareMasina.InStoc;
         //}
+
+        private void RedaEveniment(Eveniment e)
+        {
+            switch (e.Tip)
+            {
+                case TipEveniment.AdaugareMasina:
+                    Aplica(e.ToGeneric<Masina>());
+                    break;
+                case TipEveniment.CautareMasina:
+                    Aplica(e.ToGeneric<Masina>());
+                    break;
+                case TipEveniment.EditareMasina:
+                    Aplica(e.ToGeneric<Masina>());
+                    break;
+                case TipEveniment.NogocierePret:
+                    Aplica(e.ToGeneric<Masina>());
+                    break;
+                case TipEveniment.RezervaMasina:
+                    Aplica(e.ToGeneric<Masina>());
+                    break;
+                case TipEveniment.StergereMasina:
+                    AplicaStergere(e.ToGeneric<Masina>());
+                    break;
+                case TipEveniment.VanzareMasina:
+                    AplicaStergere(e.ToGeneric<Masina>());
+                    break;
+                default:
+                    throw new EvenimentNecunoscutException();
+            }
+        }
 
         protected void PublicaEveniment(Eveniment eveniment)
         {

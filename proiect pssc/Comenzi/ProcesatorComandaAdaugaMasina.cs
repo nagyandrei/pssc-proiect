@@ -10,7 +10,8 @@ namespace proiect_pssc.Comenzi
     {
         public override void Proceseaza(ComandaAdaugaMasina  comanda)
         {
-
+            var repo = new WriteRepository();
+           // repo.SalvareEvenimente();
            
         }
     }
