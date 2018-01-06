@@ -10,6 +10,7 @@ namespace proiect_pssc.Comenzi
     {
         public override void Proceseaza(ComandaAdaugaMasina  comanda)
         {
+
            
         }
     }

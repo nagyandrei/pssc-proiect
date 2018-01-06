@@ -10,7 +10,7 @@ namespace proiect_pssc.Comenzi
     {
         public override void Proceseaza(ComandaEditeazaMasina comanda)
         {
-            throw new NotImplementedException();
+            throw new NotImplementedException(); 
         }
     }
 }

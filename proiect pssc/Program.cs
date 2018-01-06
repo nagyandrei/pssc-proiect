@@ -26,7 +26,15 @@ namespace proiect_pssc
 
             var admin = new Administrator(new PlainText("bonny"),new PlainText("lash"));
             admin.AdaugaMasina(masina);
-            
+            var comandaAdaugaMasina = new ComandaAdaugaMasina();
+            MagistralaComenzi.Instanta.Value.Trimite(comandaAdaugaMasina);
+            var writeRepo = new WriteRepository();
+            writeRepo.SalvareEvenimente(masina);
+
+            var readRepo = new ReadRepository();
+            readRepo.IncarcaListaDeEvenimente();
+
+            Console.ReadKey();
         }
     }
 }
