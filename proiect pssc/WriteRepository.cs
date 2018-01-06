@@ -50,10 +50,14 @@ namespace proiect_pssc
 
         public void SalvareEvenimente(Eveniment evenimenteNoi)
         {
-           // List<Eveniment> toateEvenimentele = IncarcaListaDeEvenimente(null);
+            ///teoretic functioneaza si asa, se trimite pe rand cate un eveniment, sau undeva sa fie puse toate evenimentele din timpul
+            ///rularii iar apoi sa se incarce pe rand fiecare
+          
+            
+            // List<Eveniment> toateEvenimentele = IncarcaListaDeEvenimente(null);
            // toateEvenimentele.AddRange(evenimenteNoi);
-            String detalii= JsonConvert.SerializeObject(evenimenteNoi); ///
-            //string detalii;
+            String detalii= JsonConvert.SerializeObject(evenimenteNoi.Detalii); 
+          
             var tipEveniment=evenimenteNoi.Tip;
            
             var idRadacina="codul masinii";

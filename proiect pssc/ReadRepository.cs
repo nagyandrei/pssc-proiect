@@ -29,8 +29,16 @@ namespace proiect_pssc
                 {
                     while (reader.Read())
                     {
-                        toateEvenimentele = JsonConvert.DeserializeObject<List<Eveniment>>(reader["DetaliiEveniment"].ToString());
+                        ////////////////////////////////
+                        /////////////////////////// detalii nu merge, nu il face obiect il face doar string
+                        /////////////////////////
+                        
+                        object detalii = JsonConvert.DeserializeObject(String.Format("{0}",reader["DetaliiEveniment"]));
+                        //String readString = String.Format("{0}{1}{2}{3}", reader["id"], reader["TipEveniment"], reader["DetaliiEveniment"], reader["IdRadacina"]));
+                        Eveniment e = new Eveniment(new Guid(),(TipEveniment)Enum.Parse(typeof(TipEveniment),reader["TipEveniment"].ToString()), detalii);
+                        //toateEvenimentele = JsonConvert.DeserializeObject<List<Eveniment>>(String.Format("{0}{1}{2}{3}", reader["id"], reader["TipEveniment"], reader["DetaliiEveniment"], reader["IdRadacina"]));
                         Console.WriteLine(String.Format("{0}   {1}   {2}   {3}", reader["id"],reader["TipEveniment"],reader["DetaliiEveniment"],reader["IdRadacina"]));
+                        
                     }
                 }
                 
