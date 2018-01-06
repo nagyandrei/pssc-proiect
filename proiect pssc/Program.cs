@@ -1,6 +1,8 @@
 ﻿using AdministratorParc;
 using Model.Generic;
 using Model.Masina;
+using proiect_pssc.Comenzi;
+using proiect_pssc.Evenimente;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,6 +17,10 @@ namespace proiect_pssc
     {
         static void Main(string[] args)
         {
+            MagistralaComenzi.Instanta.Value.InregistreazaProcesatoareStandard();
+            MagistralaEvenimente.Instanta.Value.InregistreazaProcesatoareStandard();
+            MagistralaEvenimente.Instanta.Value.InchideInregistrarea();
+
             var masina = new Masina(new Guid(),TipMasina.Berlina,new PlainText("Bonny"),new PlainText("2031"),new PlainText("200k+"),new PlainText("1.9tdi"),
                                     new PlainText("1986"),new PlainText("300cp"),new PlainText("rosu"),new PlainText("nu bate nu trocane"));
 

@@ -64,6 +64,8 @@
     <Compile Include="Comenzi\ProcesatorComandaVindeMasina.cs" />
     <Compile Include="Evenimente\Eveniment.cs" />
     <Compile Include="Evenimente\MagistralaEvenimente.cs" />
+    <Compile Include="Evenimente\MagistralaEx.cs" />
+    <Compile Include="Evenimente\ProcesatorAdaugaMasina.cs" />
     <Compile Include="Evenimente\ProcesatorEvenimente.cs" />
     <Compile Include="Evenimente\TipEveniment.cs" />
     <Compile Include="Model\Administrator\Administrator.cs" />

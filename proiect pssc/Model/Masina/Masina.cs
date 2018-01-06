@@ -1,5 +1,6 @@
 ﻿using Model.Generic;
 using proiect_pssc.Evenimente;
+using proiect_pssc.Model.Masina;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -21,6 +22,13 @@ namespace Model.Masina
         public PlainText Culoare { get; private set; }
         public PlainText Putere { get; private set; }
         public PlainText CapacitateCilindrica { get; private set; }
+        public StareMasina stare { get; private set; }
+
+        private readonly List<Eveniment> _evenimenteNoi = new List<Eveniment>();
+        public ReadOnlyCollection<Eveniment> EvenimenteNoi { get => _evenimenteNoi.AsReadOnly(); }
+
+        private MagistralaEvenimente _magistralaEveniment;
+
         public Masina(Guid id, TipMasina tip, PlainText marca, PlainText an, PlainText km, PlainText motorizare, PlainText cc, PlainText putere, PlainText culoare, PlainText descriere)
         {
             Id = id;
@@ -34,21 +42,49 @@ namespace Model.Masina
             Culoare = culoare;
         }
 
-        public void VizualizareMasina()
+        //public void VizualizareMasina(Masina masina)
+        //{
+
+        //    if(stare!=StareMasina.InStoc) throw new InvalidOperationException("Nu exista masina pe stoc");
+        //    else
+        //    {
+        //        var e = new EvenimentGeneric<Masina>(masina.Id, TipEveniment.EditareMasina, masina);
+        //        Aplica(e);
+        //        PublicaEveniment(e);
+        //    }
+
+        //}
+
+        //public void EditareMasina(Masina masina)
+        //{
+        //    if (stare != StareMasina.InStoc) throw new InvalidOperationException("Nu exista masina pe stoc");
+        //    else
+        //    {
+        //        var e = new EvenimentGeneric<Masina>(masina.Id, TipEveniment.EditareMasina, masina);
+        //        Aplica(e);
+        //        PublicaEveniment(e);
+        //    }
+        //}
+
+        private void Aplica(EvenimentGeneric<Masina> e)
         {
-
-            //methond to be implemented
-
+            stare = StareMasina.InStoc;
         }
 
-        public void EditareMasina()
+        public void StergereMasina(Masina masina)
         {
-            //methond to be implemented
+            if (stare != StareMasina.InStoc) throw new InvalidOperationException("Nu exista masina pe stoc");
+            else
+            {
+                var e = new EvenimentGeneric<Masina>(masina.Id, TipEveniment.EditareMasina, masina);
+                AplicaStergere(e);
+                PublicaEveniment(e);
+            }
         }
 
-        public void StergereMasina()
+        private void AplicaStergere(EvenimentGeneric<Masina> e)
         {
-            //methond to be implemented
+            stare = StareMasina.StocInsuficient;
         }
 
         public void VizualizareRapoarte()
@@ -56,13 +92,21 @@ namespace Model.Masina
             //methond to be implemented
         }
 
-        public void AprobareNegociere()
+        public void AprobareNegociere(Masina masina)
         {
             //methond to be implemented
         }
 
-        private readonly List<Eveniment> _evenimenteNoi = new List<Eveniment>();
-        public ReadOnlyCollection<Eveniment> EvenimenteNoi { get => _evenimenteNoi.AsReadOnly(); }
+        public void RezevaMasina(Masina masina)
+        {
+            if (stare != StareMasina.InStoc) throw new InvalidOperationException("Nu exista masina pe stoc");
+            else
+            {
+                stare = StareMasina.Rezervata;
+            }
+        }
+
+       
 
         public override string ToString()
         {
@@ -74,17 +118,25 @@ namespace Model.Masina
             return base.GetHashCode();
         }
 
-        private void Aplica(EvenimentGeneric<Masina> e)
+        //private void Aplica(EvenimentGeneric<Masina> e)
+        //{
+        //    Id = e.Detalii.Id;
+        //    Tip = e.Detalii.Tip;
+        //    Marca = e.Detalii.Marca;
+        //    An = e.Detalii.An;
+        //    Kilometraj = e.Detalii.Kilometraj;
+        //    Descriere = e.Detalii.Descriere;
+        //    Motorizare = e.Detalii.Motorizare;
+        //    CapacitateCilindrica = e.Detalii.CapacitateCilindrica;
+        //    Culoare = e.Detalii.Culoare;
+        //    stare = StareMasina.InStoc;
+        //}
+
+        protected void PublicaEveniment(Eveniment eveniment)
         {
-            Id = e.Detalii.Id;
-            Tip = e.Detalii.Tip;
-            Marca = e.Detalii.Marca;
-            An = e.Detalii.An;
-            Kilometraj = e.Detalii.Kilometraj;
-            Descriere = e.Detalii.Descriere;
-            Motorizare = e.Detalii.Motorizare;
-            CapacitateCilindrica = e.Detalii.CapacitateCilindrica;
-            Culoare = e.Detalii.Culoare;
+            _evenimenteNoi.Add(eveniment);
+            //EvenimentMeci?.Invoke(this, eveniment);
+            MagistralaEvenimente.Instanta.Value.Trimite(eveniment);
         }
     }
 }

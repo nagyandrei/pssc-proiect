@@ -25,3 +25,4 @@ namespace proiect_pssc.Comenzi
             procesator.Proceseaza(comanda);
         }
     }
+}

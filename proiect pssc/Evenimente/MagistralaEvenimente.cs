@@ -5,12 +5,16 @@ using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using proiect_pssc.Comenzi;
 
 namespace proiect_pssc.Evenimente
 {
     public class MagistralaEvenimente
     {
         public static readonly Lazy<MagistralaEvenimente> Instanta = new Lazy<MagistralaEvenimente>(() => new MagistralaEvenimente());
+
+  
+
         private readonly Dictionary<TipEveniment, List<ProcesatorEveniment>> registru = new Dictionary<TipEveniment, List<ProcesatorEveniment>>();
         private bool inregistrareDeschisa = true;
 

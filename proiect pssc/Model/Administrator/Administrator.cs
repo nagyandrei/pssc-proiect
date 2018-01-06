@@ -2,6 +2,7 @@
 using Model.Generic;
 using Model.Masina;
 using proiect_pssc.Evenimente;
+using proiect_pssc.Model.Masina;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -19,6 +20,8 @@ namespace AdministratorParc
         public List<Masina> ListaDeMasini { get; private set; }
         public List<Dealer> ListaDealeri { get; private set; }
 
+        public StareMasina stare { get; private set; }
+
         private readonly List<Eveniment> _evenimenteNoi = new List<Eveniment>();
         public ReadOnlyCollection<Eveniment> EvenimenteNoi => _evenimenteNoi.AsReadOnly();
 
@@ -34,9 +37,15 @@ namespace AdministratorParc
         {
             ListaDeMasini.Add(masina);
             var e = new EvenimentGeneric<Masina>(masina.Id, TipEveniment.AdaugareMasina, masina);
-          //  Aplica(e);
+            Aplica(e);
             PublicaEveniment(e);
             Console.WriteLine("adaugat");
+            Console.ReadKey();
+        }
+
+        private void Aplica(EvenimentGeneric<Masina> e)
+        {
+            stare = StareMasina.InStoc;
         }
 
         public void AdaugaDealer()
@@ -44,6 +53,14 @@ namespace AdministratorParc
             //methond to be implemented
         }
 
+        public void VindeMasina()
+        {
+            if (stare != StareMasina.InStoc) throw new InvalidOperationException("Nu exista masina pe stoc");
+            else
+            {
+                stare = StareMasina.StocInsuficient;
+            }
+        }
 
         public void ViziualizareRaportDealer()
         {

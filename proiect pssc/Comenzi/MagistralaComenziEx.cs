@@ -6,10 +6,16 @@ using System.Threading.Tasks;
 
 namespace proiect_pssc.Comenzi
 {
-    public static void InregistreazaProcesatoareStandard(this MagistralaComenzi magistrala)
+    public static class MagistralaComenziEx
     {
-        magistrala.InregistreazaProcesator(new ProcesatorStartMeci());
-        magistrala.InregistreazaProcesator(new ProcesatorGolMarcat());
-        magistrala.InregistreazaProcesator(new ProcesatorTerminareMeci());
+        public static void InregistreazaProcesatoareStandard(this MagistralaComenzi magistrala)
+        {
+            magistrala.InregistreazaProcesator(new ProcesatorComandaAdaugaMasina());
+            magistrala.InregistreazaProcesator(new ProcesatorComandaCautaMasina());
+            magistrala.InregistreazaProcesator(new ProcesatorComandaEditeazaMasina());
+            magistrala.InregistreazaProcesator(new ProcesatorComandaRezervaMasina());
+            magistrala.InregistreazaProcesator(new ProcesatorComandaStergeMasina());
+            magistrala.InregistreazaProcesator(new ProcesatorComandaVindeMasina());
+        }
     }
 }
