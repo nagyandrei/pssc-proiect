@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Model.Masina;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,9 +11,8 @@ namespace proiect_pssc.Comenzi
     {
         public override void Proceseaza(ComandaAdaugaMasina  comanda)
         {
-            var repo = new WriteRepository();
-           // repo.SalvareEvenimente();
-           
+            //var repo = new WriteRepository();
+            comanda.Masina.AdaugaMasina();
         }
     }
 }

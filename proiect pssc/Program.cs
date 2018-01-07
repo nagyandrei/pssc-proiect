@@ -25,6 +25,8 @@ namespace proiect_pssc
                                     new PlainText("1986"),new PlainText("300cp"),new PlainText("rosu"),new PlainText("nu bate nu trocane"));
 
             var admin = new Administrator(new PlainText("bonny"),new PlainText("lash"));
+
+            
             admin.AdaugaMasina(masina);
             var comandaAdaugaMasina = new ComandaAdaugaMasina();
             MagistralaComenzi.Instanta.Value.Trimite(comandaAdaugaMasina);

@@ -21,6 +21,11 @@ namespace Creating_a_custom_user_login_form.Controllers
         {
             return View();
         }
+        [HttpGet]
+        public ActionResult HomePage()
+        {
+            return View();
+        }
 
         [HttpPost]
         public ActionResult Login(Models.User user)
@@ -28,9 +33,10 @@ namespace Creating_a_custom_user_login_form.Controllers
             if (ModelState.IsValid)
             {
                 if (user.IsValid(user.UserName, user.Password))
-                {
+                { 
+                    
                     FormsAuthentication.SetAuthCookie(user.UserName, user.RememberMe);
-                    return RedirectToAction("Index", "Home");
+                    return RedirectToAction("HomePage", "User");
                 }
                 else
                 {

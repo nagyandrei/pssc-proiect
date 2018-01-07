@@ -42,6 +42,8 @@ namespace Model.Masina
             Culoare = culoare;
         }
 
+        
+
         public Masina(IEnumerable<Eveniment> evenimente)
         {
             foreach (var e in evenimente)
@@ -73,6 +75,15 @@ namespace Model.Masina
         //        PublicaEveniment(e);
         //    }
         //}
+        public void AdaugaMasina(Masina masina)
+        {
+            var e = new EvenimentGeneric<Masina>(masina.Id, TipEveniment.AdaugareMasina, masina);
+            Aplica(e);
+            PublicaEveniment(e);
+        }
+
+   
+
 
         private void Aplica(EvenimentGeneric<Masina> e)
         {
@@ -84,7 +95,7 @@ namespace Model.Masina
             if (stare != StareMasina.InStoc) throw new InvalidOperationException("Nu exista masina pe stoc");
             else
             {
-                var e = new EvenimentGeneric<Masina>(masina.Id, TipEveniment.EditareMasina, masina);
+                var e = new EvenimentGeneric<Masina>(masina.Id, TipEveniment.StergereMasina, masina);
                 AplicaStergere(e);
                 PublicaEveniment(e);
             }

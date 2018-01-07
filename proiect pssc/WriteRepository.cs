@@ -56,7 +56,7 @@ namespace proiect_pssc
             
             // List<Eveniment> toateEvenimentele = IncarcaListaDeEvenimente(null);
            // toateEvenimentele.AddRange(evenimenteNoi);
-            String detalii= JsonConvert.SerializeObject(evenimenteNoi.Detalii); 
+            String detalii= JsonConvert.SerializeObject(evenimenteNoi); 
           
             var tipEveniment=evenimenteNoi.Tip;
            

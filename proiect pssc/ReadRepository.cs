@@ -16,7 +16,7 @@ namespace proiect_pssc
         public List<Eveniment> IncarcaListaDeEvenimente()
         {
             List<Eveniment> toateEvenimentele = new List<Eveniment>();
-
+            List<Eveniment> evenimenteCitite = new List<Eveniment>();
             //    toateEvenimentele = JsonConvert.DeserializeObject<List<Eveniment>>(detalii);
 
             using (var cn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename" +
@@ -32,13 +32,14 @@ namespace proiect_pssc
                         ////////////////////////////////
                         /////////////////////////// detalii nu merge, nu il face obiect il face doar string
                         /////////////////////////
-                        
-                        object detalii = JsonConvert.DeserializeObject(String.Format("{0}",reader["DetaliiEveniment"]));
+                        toateEvenimentele = JsonConvert.DeserializeObject<List<Eveniment>>(String.Format("{0}", reader["DetaliiEveniment"]));
+                       // object detalii = JsonConvert.DeserializeObject(String.Format("{0}",reader["DetaliiEveniment"]),typeof(Eveniment));
+                       // object detalii = JsonConvert.DeserializeObject<List<Eveniment>>(String.Format("{0}", reader["DetaliiEveniment"]));
                         //String readString = String.Format("{0}{1}{2}{3}", reader["id"], reader["TipEveniment"], reader["DetaliiEveniment"], reader["IdRadacina"]));
-                        Eveniment e = new Eveniment(new Guid(),(TipEveniment)Enum.Parse(typeof(TipEveniment),reader["TipEveniment"].ToString()), detalii);
+                        Eveniment e = new Eveniment(new Guid(),(TipEveniment)Enum.Parse(typeof(TipEveniment),reader["TipEveniment"].ToString()),"rip");
                         //toateEvenimentele = JsonConvert.DeserializeObject<List<Eveniment>>(String.Format("{0}{1}{2}{3}", reader["id"], reader["TipEveniment"], reader["DetaliiEveniment"], reader["IdRadacina"]));
-                        Console.WriteLine(String.Format("{0}   {1}   {2}   {3}", reader["id"],reader["TipEveniment"],reader["DetaliiEveniment"],reader["IdRadacina"]));
-                        
+                        // Console.WriteLine(String.Format("{0}   {1}   {2}   {3}", reader["id"],reader["TipEveniment"],reader["DetaliiEveniment"],reader["IdRadacina"]));
+                        evenimenteCitite.Add(e);
                     }
                 }
                 
