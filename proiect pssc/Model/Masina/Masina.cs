@@ -42,7 +42,8 @@ namespace Model.Masina
             Culoare = culoare;
         }
 
-        
+        public Masina()
+        { }
 
         public Masina(IEnumerable<Eveniment> evenimente)
         {
@@ -80,6 +81,7 @@ namespace Model.Masina
             var e = new EvenimentGeneric<Masina>(masina.Id, TipEveniment.AdaugareMasina, masina);
             Aplica(e);
             PublicaEveniment(e);
+
         }
 
         private void Aplica(EvenimentGeneric<Masina> e)

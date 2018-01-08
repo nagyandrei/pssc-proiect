@@ -52,10 +52,10 @@ namespace proiect_pssc
         {
 
             // string detalii= JsonConvert.SerializeObject(evenimenteNoi);
-            string detalii = "";
+            string detalii = JsonConvert.SerializeObject(evenimenteNoi.Detalii);
             var tipEveniment=evenimenteNoi.Tip;
            
-            var idRadacina="codul masinii";
+            var idRadacina=evenimenteNoi.IdRadacina.ToString();
 
             using (var cn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename" +
               @"='C:\Users\Andrei\Documents\GitHub\pssc-proiect\IterfataUtilizator\App_Data\Users.mdf';Integrated Security=True"))
@@ -74,8 +74,6 @@ namespace proiect_pssc
                     .Value = idRadacina;
                 cn.Open();
                 var reader = cmd.ExecuteReader();
-
-               
             }
         }
 

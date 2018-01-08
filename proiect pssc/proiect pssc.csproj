@@ -51,6 +51,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Model\Masina\MasinaDes.cs" />
     <Compile Include="Receive.cs" />
     <Compile Include="Send.cs" />
     <Compile Include="Comenzi\Comanda.cs" />

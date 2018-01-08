@@ -1,6 +1,7 @@
 ﻿using Model.Masina;
 using Newtonsoft.Json;
 using proiect_pssc.Evenimente;
+using proiect_pssc.Model.Masina;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -28,17 +29,17 @@ namespace proiect_pssc
                 using (SqlDataReader reader = cmd.ExecuteReader())
                 {
                     while (reader.Read())
-                    {
+                    {//select * wehere idradacina=string
                         ////////////////////////////////
                         /////////////////////////// detalii nu merge, nu il face obiect il face doar string
                         /////////////////////////
                         
                        // toateEvenimentele = JsonConvert.DeserializeObject<List<Eveniment>>(String.Format("{0}", reader["DetaliiEveniment"]));
-                        object detalii = JsonConvert.DeserializeObject<dynamic>(String.Format("{0}",reader["DetaliiEveniment"]));
+                        object detalii = JsonConvert.DeserializeObject<MasinaDes.RootObject>(String.Format("{0}",reader["DetaliiEveniment"]));
                        // object detalii = JsonConvert.DeserializeObject<List<Eveniment>>(String.Format("{0}", reader["DetaliiEveniment"]));
-                       
+                        
                         //String readString = String.Format("{0}{1}{2}{3}", reader["id"], reader["TipEveniment"], reader["DetaliiEveniment"], reader["IdRadacina"]));
-                       Eveniment e = new Eveniment(new Guid(),(TipEveniment)Enum.Parse(typeof(TipEveniment),reader["TipEveniment"].ToString()),"rip");
+                       Eveniment e = new Eveniment(new Guid(),(TipEveniment)Enum.Parse(typeof(TipEveniment),reader["TipEveniment"].ToString()),detalii);
                         //toateEvenimentele = JsonConvert.DeserializeObject<List<Eveniment>>(String.Format("{0}{1}{2}{3}", reader["id"], reader["TipEveniment"], reader["DetaliiEveniment"], reader["IdRadacina"]));
                         // Console.WriteLine(String.Format("{0}   {1}   {2}   {3}", reader["id"],reader["TipEveniment"],reader["DetaliiEveniment"],reader["IdRadacina"]));
                         evenimenteCitite.Add(e);
@@ -64,4 +65,6 @@ namespace proiect_pssc
             return toateEvenimentele;
         }
     }
+
+    
 }

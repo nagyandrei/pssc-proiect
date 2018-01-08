@@ -12,7 +12,8 @@ namespace proiect_pssc.Comenzi
         public override void Proceseaza(ComandaAdaugaMasina  comanda)
         {
             //var repo = new WriteRepository();
-            comanda.Masina1.AdaugaMasina(comanda.Masina1);
+            Masina masina = new Masina();
+            masina.AdaugaMasina(comanda.Masina1);
            
         }
     }

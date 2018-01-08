@@ -1,4 +1,5 @@
 ﻿using Model.Masina;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,11 +12,13 @@ namespace proiect_pssc.Evenimente
     {
         public override void Proceseaza(Eveniment e)
         {
-           //var masina = e.ToGeneric<Masina>();
+        
             var repo = new WriteRepository();
+            var trimite = new Send();
+            trimite.TrimiteEveniment(e);
+           
             repo.SalvareEvenimente(e);
-          //  Console.WriteLine(masina.ToString());
-          //to be implemented
+           
         }
     }
 }
