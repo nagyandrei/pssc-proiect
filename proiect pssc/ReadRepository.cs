@@ -32,11 +32,13 @@ namespace proiect_pssc
                         ////////////////////////////////
                         /////////////////////////// detalii nu merge, nu il face obiect il face doar string
                         /////////////////////////
-                        toateEvenimentele = JsonConvert.DeserializeObject<List<Eveniment>>(String.Format("{0}", reader["DetaliiEveniment"]));
-                       // object detalii = JsonConvert.DeserializeObject(String.Format("{0}",reader["DetaliiEveniment"]),typeof(Eveniment));
+                        
+                       // toateEvenimentele = JsonConvert.DeserializeObject<List<Eveniment>>(String.Format("{0}", reader["DetaliiEveniment"]));
+                        object detalii = JsonConvert.DeserializeObject<dynamic>(String.Format("{0}",reader["DetaliiEveniment"]));
                        // object detalii = JsonConvert.DeserializeObject<List<Eveniment>>(String.Format("{0}", reader["DetaliiEveniment"]));
+                       
                         //String readString = String.Format("{0}{1}{2}{3}", reader["id"], reader["TipEveniment"], reader["DetaliiEveniment"], reader["IdRadacina"]));
-                        Eveniment e = new Eveniment(new Guid(),(TipEveniment)Enum.Parse(typeof(TipEveniment),reader["TipEveniment"].ToString()),"rip");
+                       Eveniment e = new Eveniment(new Guid(),(TipEveniment)Enum.Parse(typeof(TipEveniment),reader["TipEveniment"].ToString()),"rip");
                         //toateEvenimentele = JsonConvert.DeserializeObject<List<Eveniment>>(String.Format("{0}{1}{2}{3}", reader["id"], reader["TipEveniment"], reader["DetaliiEveniment"], reader["IdRadacina"]));
                         // Console.WriteLine(String.Format("{0}   {1}   {2}   {3}", reader["id"],reader["TipEveniment"],reader["DetaliiEveniment"],reader["IdRadacina"]));
                         evenimenteCitite.Add(e);

@@ -180,3 +180,7 @@ C:\Users\Andrei\Documents\GitHub\pssc-proiect\IterfataUtilizator\obj\Debug\Iterf
 C:\Users\Andrei\Documents\GitHub\pssc-proiect\IterfataUtilizator\obj\Debug\IterfataUtilizator.csproj.CoreCompileInputs.cache
 C:\Users\Andrei\Documents\GitHub\pssc-proiect\IterfataUtilizator\obj\Debug\IterfataUtilizator.dll
 C:\Users\Andrei\Documents\GitHub\pssc-proiect\IterfataUtilizator\obj\Debug\IterfataUtilizator.pdb
+C:\Users\Andrei\Documents\GitHub\pssc-proiect\IterfataUtilizator\bin\Microsoft.Diagnostics.Tracing.EventSource.dll
+C:\Users\Andrei\Documents\GitHub\pssc-proiect\IterfataUtilizator\bin\RabbitMQ.Client.dll
+C:\Users\Andrei\Documents\GitHub\pssc-proiect\IterfataUtilizator\bin\Microsoft.Diagnostics.Tracing.EventSource.xml
+C:\Users\Andrei\Documents\GitHub\pssc-proiect\IterfataUtilizator\bin\RabbitMQ.Client.xml

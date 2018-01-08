@@ -9,6 +9,6 @@ namespace proiect_pssc.Comenzi
 {
     public class ComandaAdaugaMasina:Comanda
     {
-        public Masina Masina { get; set; }
+        public Masina Masina1 { get; set; }
     }
 }

@@ -82,9 +82,6 @@ namespace Model.Masina
             PublicaEveniment(e);
         }
 
-   
-
-
         private void Aplica(EvenimentGeneric<Masina> e)
         {
             stare = StareMasina.InStoc;
@@ -125,8 +122,6 @@ namespace Model.Masina
             }
         }
 
-       
-
         public override string ToString()
         {
             return Tip + ", " + Marca + ", " + An + ", " + Kilometraj + ", " + Descriere;
@@ -136,20 +131,6 @@ namespace Model.Masina
         {
             return base.GetHashCode();
         }
-
-        //private void Aplica(EvenimentGeneric<Masina> e)
-        //{
-        //    Id = e.Detalii.Id;
-        //    Tip = e.Detalii.Tip;
-        //    Marca = e.Detalii.Marca;
-        //    An = e.Detalii.An;
-        //    Kilometraj = e.Detalii.Kilometraj;
-        //    Descriere = e.Detalii.Descriere;
-        //    Motorizare = e.Detalii.Motorizare;
-        //    CapacitateCilindrica = e.Detalii.CapacitateCilindrica;
-        //    Culoare = e.Detalii.Culoare;
-        //    stare = StareMasina.InStoc;
-        //}
 
         private void RedaEveniment(Eveniment e)
         {
@@ -180,7 +161,6 @@ namespace Model.Masina
                     throw new EvenimentNecunoscutException();
             }
         }
-
         protected void PublicaEveniment(Eveniment eveniment)
         {
             _evenimenteNoi.Add(eveniment);

@@ -21,14 +21,19 @@ namespace proiect_pssc
             MagistralaEvenimente.Instanta.Value.InregistreazaProcesatoareStandard();
             MagistralaEvenimente.Instanta.Value.InchideInregistrarea();
 
-            var masina = new Masina(new Guid(),TipMasina.Berlina,new PlainText("Bonny"),new PlainText("2031"),new PlainText("200k+"),new PlainText("1.9tdi"),
+            var masina = new Masina(new Guid(),TipMasina.Berlina,new PlainText("Vw"),new PlainText("2031"),new PlainText("200k+"),new PlainText("1.9tdi"),
                                     new PlainText("1986"),new PlainText("300cp"),new PlainText("rosu"),new PlainText("nu bate nu trocane"));
 
             var admin = new Administrator(new PlainText("bonny"),new PlainText("lash"));
 
             
-            admin.AdaugaMasina(masina);
+            //admin.AdaugaMasina(masina);
+            //////////
+            ///////////
             var comandaAdaugaMasina = new ComandaAdaugaMasina();
+            comandaAdaugaMasina.Masina1 = masina;
+            //////////
+            ////////////
             MagistralaComenzi.Instanta.Value.Trimite(comandaAdaugaMasina);
             var writeRepo = new WriteRepository();
           //  writeRepo.SalvareEvenimente(masina);

@@ -16,3 +16,7 @@ C:\Users\Andrei\Documents\GitHub\pssc-proiect\proiect pssc\bin\Debug\proiect pss
 C:\Users\Andrei\Documents\GitHub\pssc-proiect\proiect pssc\bin\Debug\proiect pssc.pdb
 C:\Users\Andrei\Documents\GitHub\pssc-proiect\proiect pssc\bin\Debug\Newtonsoft.Json.dll
 C:\Users\Andrei\Documents\GitHub\pssc-proiect\proiect pssc\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Andrei\Documents\GitHub\pssc-proiect\proiect pssc\bin\Debug\Microsoft.Diagnostics.Tracing.EventSource.dll
+C:\Users\Andrei\Documents\GitHub\pssc-proiect\proiect pssc\bin\Debug\RabbitMQ.Client.dll
+C:\Users\Andrei\Documents\GitHub\pssc-proiect\proiect pssc\bin\Debug\Microsoft.Diagnostics.Tracing.EventSource.xml
+C:\Users\Andrei\Documents\GitHub\pssc-proiect\proiect pssc\bin\Debug\RabbitMQ.Client.xml
