@@ -42,7 +42,7 @@ namespace Creating_a_custom_user_login_form.Models
                 cmd.Parameters
                     .Add(new SqlParameter("@p", SqlDbType.NVarChar))
                     .Value = Helpers.SHA1.Encode(_password);
-                cn.Open();
+             //   cn.Open();
                 var reader = cmd.ExecuteReader();
                 if (reader.HasRows)
                 {

@@ -36,7 +36,7 @@ namespace AdministratorParc
         public void AdaugaMasina(Masina masina)
         {
             ListaDeMasini.Add(masina);
-            var e = new EvenimentGeneric<Masina>(masina.Id, TipEveniment.AdaugareMasina, masina);
+            var e = new EvenimentGeneric<Masina>(masina.CIV, TipEveniment.AdaugareMasina, masina);
             Aplica(e);
             PublicaEveniment(e);
           

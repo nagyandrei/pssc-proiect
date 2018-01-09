@@ -146,6 +146,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\DDDconfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -206,6 +207,10 @@
     <ProjectReference Include="..\Helpers\Helpers.csproj">
       <Project>{46cd167f-bc3c-4a48-a51e-40ebe1da058a}</Project>
       <Name>Helpers</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\proiect pssc\proiect pssc.csproj">
+      <Project>{92d386aa-5892-4b21-8861-3605333e23bd}</Project>
+      <Name>proiect pssc</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

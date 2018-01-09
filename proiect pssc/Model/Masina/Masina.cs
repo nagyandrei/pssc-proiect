@@ -12,7 +12,7 @@ namespace Model.Masina
 {
     public class Masina
     {
-        public Guid Id { get; private set; }
+        public PlainText CIV { get; private set; }
         public TipMasina Tip { get; private set; }
         public PlainText Marca { get; private set; }
         public PlainText An { get; private set; }
@@ -29,9 +29,9 @@ namespace Model.Masina
 
         private MagistralaEvenimente _magistralaEveniment;
 
-        public Masina(Guid id, TipMasina tip, PlainText marca, PlainText an, PlainText km, PlainText motorizare, PlainText cc, PlainText putere, PlainText culoare, PlainText descriere)
+        public Masina(PlainText civ, TipMasina tip, PlainText marca, PlainText an, PlainText km, PlainText motorizare, PlainText cc, PlainText putere, PlainText culoare, PlainText descriere)
         {
-            Id = id;
+            CIV = civ;
             Tip = tip;
             Marca = marca;
             An = an;
@@ -53,32 +53,9 @@ namespace Model.Masina
             }
         }
 
-        //public void VizualizareMasina(Masina masina)
-        //{
-
-        //    if(stare!=StareMasina.InStoc) throw new InvalidOperationException("Nu exista masina pe stoc");
-        //    else
-        //    {
-        //        var e = new EvenimentGeneric<Masina>(masina.Id, TipEveniment.EditareMasina, masina);
-        //        Aplica(e);
-        //        PublicaEveniment(e);
-        //    }
-
-        //}
-
-        //public void EditareMasina(Masina masina)
-        //{
-        //    if (stare != StareMasina.InStoc) throw new InvalidOperationException("Nu exista masina pe stoc");
-        //    else
-        //    {
-        //        var e = new EvenimentGeneric<Masina>(masina.Id, TipEveniment.EditareMasina, masina);
-        //        Aplica(e);
-        //        PublicaEveniment(e);
-        //    }
-        //}
         public void AdaugaMasina(Masina masina)
         {
-            var e = new EvenimentGeneric<Masina>(masina.Id, TipEveniment.AdaugareMasina, masina);
+            var e = new EvenimentGeneric<Masina>(masina.CIV, TipEveniment.AdaugareMasina, masina);
             Aplica(e);
             PublicaEveniment(e);
 
@@ -94,7 +71,7 @@ namespace Model.Masina
             if (stare != StareMasina.InStoc) throw new InvalidOperationException("Nu exista masina pe stoc");
             else
             {
-                var e = new EvenimentGeneric<Masina>(masina.Id, TipEveniment.StergereMasina, masina);
+                var e = new EvenimentGeneric<Masina>(masina.CIV, TipEveniment.StergereMasina, masina);
                 AplicaStergere(e);
                 PublicaEveniment(e);
             }

@@ -23,7 +23,7 @@ namespace proiect_pssc
                 var body = Encoding.UTF8.GetBytes(message);
 
                 channel.BasicPublish(exchange: "", routingKey: "hello", basicProperties: null, body: body);
-                Console.WriteLine(" [x] Sent {0}", message);
+              //  Console.WriteLine(" [x] Sent {0}", message);
             }
            
         }

@@ -4,17 +4,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Newtonsoft.Json.Linq;
+using Model.Generic;
 
 namespace proiect_pssc.Evenimente
 {
     public class Eveniment
     {
         public Guid Id { get; private set; }
-        public Guid IdRadacina { get; private set; }
+        public PlainText IdRadacina { get; private set; }
         public TipEveniment Tip;
         public object Detalii { get; private set; }
 
-        public Eveniment(Guid idRadacina, TipEveniment tipEveniment, object detalii)
+        public Eveniment(PlainText idRadacina, TipEveniment tipEveniment, object detalii)
         {
             Tip = tipEveniment;
             IdRadacina = idRadacina;
@@ -44,7 +45,7 @@ namespace proiect_pssc.Evenimente
 
     public class EvenimentGeneric<T> : Eveniment
     {
-        public EvenimentGeneric(Guid idRadacina, TipEveniment tipEveniment, T detalii)
+        public EvenimentGeneric(PlainText idRadacina, TipEveniment tipEveniment, T detalii)
             : base(idRadacina, tipEveniment, detalii)
         {
         }

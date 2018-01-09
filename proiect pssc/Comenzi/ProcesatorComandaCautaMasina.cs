@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Model.Masina;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,7 +11,12 @@ namespace proiect_pssc.Comenzi
     {
         public override void Proceseaza(ComandaCautaMasina comanda)
         {
-            throw new NotImplementedException();
+           
+            var read = new ReadRepository();
+            
+            var gasit = read.CautaMasina("18");
+           
+            
         }
     }
 }

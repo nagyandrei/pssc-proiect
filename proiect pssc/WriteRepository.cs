@@ -14,39 +14,38 @@ namespace proiect_pssc
 {
     public class WriteRepository
     {
-        public Masina writeToDb(Masina masina)
+
+
+        public bool StergereMasina(string idRadacina)
         {
-            Guid id = masina.Id;
-            //serch db
-            return masina;
+            using (var cn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename" +
+             @"='C:\Users\Andrei\Documents\GitHub\pssc-proiect\IterfataUtilizator\App_Data\Users.mdf';Integrated Security=True"))
+            {
+                string _sql = @"DELETE FROM [dbo].[ParcAuto] WHERE [IdRadacina]=@idRadacina";
+
+
+                var cmd = new SqlCommand(_sql, cn);
+                cmd.Parameters
+                    .Add(new SqlParameter("@idRadacina", SqlDbType.NVarChar))
+                    .Value = idRadacina;
+                cn.Open();
+                var reader = cmd.ExecuteReader();
+                if (reader.HasRows)
+                {
+                    reader.Dispose();
+                    cmd.Dispose();
+                    return true;
+                }
+                else
+                {
+                    reader.Dispose();
+                    cmd.Dispose();
+                    return false;
+                }
+            }
+
         }
 
-        public Masina updateDb(Masina masina)
-        {
-            Guid id;
-            return masina;//
-        }
-
-        public Masina deteleFromDb(Masina masina)
-        {
-            return masina;
-        }
-
-        //public void SalvareEvenimente(ReadOnlyCollection<Eveniment> e)
-        //{
-        //    this.SalvareEvenimente(e);
-        //}
-        
-        public Masina GasesteMasina(Guid idMasina)
-        {
-            //load events
-            //   var evenimenteMasina = IncarcaListaDeEvenimente()
-            //                         .Where(e => e.IdRadacina == idMasina);
-
-            //creare meci din evenimente
-            //  return new Masina(evenimenteMasina);
-            return null;
-        }
 
         public void SalvareEvenimente(Eveniment evenimenteNoi)
         {
@@ -77,14 +76,7 @@ namespace proiect_pssc
             }
         }
 
-        private List<Eveniment> IncarcaListaDeEvenimente(String detalii)
-        {
-            List<Eveniment> toateEvenimentele = new List<Eveniment>();
-           
-             //   toateEvenimentele = JsonConvert.DeserializeObject<List<Eveniment>>(detalii);
-
-            return toateEvenimentele;
-        }
+        
     }
 
 }

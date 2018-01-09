@@ -6,6 +6,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
+
 namespace proiect_pssc.Evenimente
 {
     public class ProcesatorAdaugaMasina : ProcesatorEveniment
@@ -16,7 +18,6 @@ namespace proiect_pssc.Evenimente
             var repo = new WriteRepository();
             var trimite = new Send();
             trimite.TrimiteEveniment(e);
-           
             repo.SalvareEvenimente(e);
            
         }

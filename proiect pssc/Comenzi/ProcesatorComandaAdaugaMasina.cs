@@ -5,6 +5,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+using System.Web;
+
 namespace proiect_pssc.Comenzi
 {
     public class ProcesatorComandaAdaugaMasina:ProcesatorComandaGeneric<ComandaAdaugaMasina>
@@ -14,6 +16,8 @@ namespace proiect_pssc.Comenzi
             //var repo = new WriteRepository();
             Masina masina = new Masina();
             masina.AdaugaMasina(comanda.Masina1);
+           // var controller = new HomePageController();
+        //    controller.CautaMasina();
            
         }
     }

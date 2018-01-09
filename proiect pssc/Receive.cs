@@ -1,19 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿
+using RabbitMQ.Client;
+using RabbitMQ.Client.Events;
+using System;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace proiect_pssc
 {
-    using RabbitMQ.Client;
-    using RabbitMQ.Client.Events;
-    using System;
-    using System.Text;
+  
 
-    class Receive
+    public class Receive
     {
-        public static void PrimesteEveiment()
+        public void PrimesteEveiment()
         {
             var factory = new ConnectionFactory() { HostName = "localhost" };
             using (var connection = factory.CreateConnection())
@@ -30,8 +27,8 @@ namespace proiect_pssc
                 };
                 channel.BasicConsume(queue: "hello", autoAck: true, consumer: consumer);
 
-                Console.WriteLine(" Press [enter] to exit.");
-                Console.ReadLine();
+              //  Console.WriteLine(" Press [enter] to exit.");
+               // Console.ReadLine();
             }
         }
     }

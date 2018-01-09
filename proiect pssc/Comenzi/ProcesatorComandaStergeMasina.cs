@@ -10,7 +10,9 @@ namespace proiect_pssc.Comenzi
     {
         public override void Proceseaza(ComandaStergeMasina comanda)
         {
-            throw new NotImplementedException();
+            var write = new WriteRepository();
+            var gasit = write.StergereMasina("18");
+           
         }
     }
 }
