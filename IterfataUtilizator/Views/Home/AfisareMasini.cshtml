@@ -1,0 +1,86 @@
+﻿@model IEnumerable<IterfataUtilizator.Models.MasinaMVC>
+@{
+    ViewBag.Title = "AfisareMasini";
+}
+
+<h2>AfisareMasini</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.CIV.Text)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Tip)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Marca.Text)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.An.Text))
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Kilometraj.Text)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Descriere.Text)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Motorizare.Text)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Culoare.Text)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Putere.Text)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CapacitateCilindrica.Text)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td >
+            @Html.DisplayFor(modelItem => item.CIV.Text)
+  
+        </td >
+        <td >
+            @Html.DisplayFor(modelItem => item.Tip)
+        </td >
+        <td >
+            @Html.DisplayFor(modelItem => item.Marca.Text)
+        </td >
+        <td >
+            @Html.DisplayFor(modelItem => item.An.Text)
+        </td >
+        <td >
+            @Html.DisplayFor(modelItem => item.Kilometraj.Text)
+        </td >
+    <td>
+    @Html.DisplayFor(modelItem => item.Descriere.Text)
+    </td >
+    <td>
+    @Html.DisplayFor(modelItem => item.Motorizare.Text)
+    </td >
+    <td >
+    @Html.DisplayFor(modelItem => item.Culoare.Text)
+    </td >
+    <td >
+    @Html.DisplayFor(modelItem => item.Putere.Text)
+    </td >
+    <td >
+    @Html.DisplayFor(modelItem => item.CapacitateCilindrica.Text)
+    </td >
+        <td >
+            @Html.ActionLink("Edit", "Edit") |
+            @Html.ActionLink("Delete", "Delete")
+        </td >
+    </tr >
+}
+
+</table>

@@ -24,7 +24,7 @@ namespace Creating_a_custom_user_login_form.Controllers
         [HttpGet]
         public ActionResult HomePage()
         {
-            return View();
+            return View("HomePage");
         }
 
         [HttpPost]
@@ -36,7 +36,7 @@ namespace Creating_a_custom_user_login_form.Controllers
                 { 
                     
                     FormsAuthentication.SetAuthCookie(user.UserName, user.RememberMe);
-                    return RedirectToAction("HomePage", "User");
+                    return RedirectToAction("HomePage");
                 }
                 else
                 {
@@ -48,7 +48,7 @@ namespace Creating_a_custom_user_login_form.Controllers
         public ActionResult Logout()
         {
             FormsAuthentication.SignOut();
-            return RedirectToAction("Index", "Home");
+            return RedirectToAction("HomePage", "Home");
         }
     }
 }

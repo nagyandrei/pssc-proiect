@@ -7,9 +7,10 @@ using System.Threading.Tasks;
 
 namespace proiect_pssc.Comenzi
 {
-    public class ComandaRezervaMasina:Comanda
+    public class ComandaRezervaMasina : Comanda
     {
         public Masina Masina { get; set; }
+        public string IdRadacina {get;set;}
     }
 }
 

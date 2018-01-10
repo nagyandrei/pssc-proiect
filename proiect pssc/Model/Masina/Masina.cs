@@ -77,6 +77,7 @@ namespace Model.Masina
             }
         }
 
+
         private void AplicaStergere(EvenimentGeneric<Masina> e)
         {
             stare = StareMasina.StocInsuficient;
@@ -92,13 +93,20 @@ namespace Model.Masina
             //methond to be implemented
         }
 
-        public void RezevaMasina(Masina masina)
+        public void RezevaMasina(Masina masina, StareMasina stare)
         {
             if (stare != StareMasina.InStoc) throw new InvalidOperationException("Nu exista masina pe stoc");
             else
             {
-                stare = StareMasina.Rezervata;
+                var e = new EvenimentGeneric<Masina>(masina.CIV, TipEveniment.RezervaMasina, masina);
+                AplicaRezervare(e);
+                PublicaEveniment(e);
             }
+        }
+
+        private void AplicaRezervare(EvenimentGeneric<Masina> e)
+        {
+            stare = StareMasina.Rezervata;
         }
 
         public override string ToString()
@@ -128,7 +136,7 @@ namespace Model.Masina
                     Aplica(e.ToGeneric<Masina>());
                     break;
                 case TipEveniment.RezervaMasina:
-                    Aplica(e.ToGeneric<Masina>());
+                    AplicaRezervare(e.ToGeneric<Masina>());
                     break;
                 case TipEveniment.StergereMasina:
                     AplicaStergere(e.ToGeneric<Masina>());

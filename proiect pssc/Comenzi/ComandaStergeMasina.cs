@@ -9,6 +9,6 @@ namespace proiect_pssc.Comenzi
 {
     public class ComandaStergeMasina:Comanda
     {
-        public Masina masina { get; set; }
+        public string CIV { get; set; }
     }
 }

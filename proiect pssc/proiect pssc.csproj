@@ -52,6 +52,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Evenimente\ProcesatorEditeazaMasina.cs" />
     <Compile Include="Model\Masina\MasinaDes.cs" />
     <Compile Include="Receive.cs" />
     <Compile Include="Send.cs" />

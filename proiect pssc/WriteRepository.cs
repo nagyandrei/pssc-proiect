@@ -10,19 +10,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace proiect_pssc
 {
     public class WriteRepository
     {
-
-
+        string connection = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename" +
+             @"='C:\Users\Andrei\Documents\GitHub\pssc-proiect\IterfataUtilizator\App_Data\Users.mdf';Integrated Security=True";
         public bool StergereMasina(string idRadacina)
         {
-            using (var cn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename" +
-             @"='C:\Users\Andrei\Documents\GitHub\pssc-proiect\IterfataUtilizator\App_Data\Users.mdf';Integrated Security=True"))
+            using (var cn = new SqlConnection(connection))
             {
                 string _sql = @"DELETE FROM [dbo].[ParcAuto] WHERE [IdRadacina]=@idRadacina";
-
 
                 var cmd = new SqlCommand(_sql, cn);
                 cmd.Parameters
@@ -43,25 +42,24 @@ namespace proiect_pssc
                     return false;
                 }
             }
-
         }
-
 
         public void SalvareEvenimente(Eveniment evenimenteNoi)
         {
 
-            // string detalii= JsonConvert.SerializeObject(evenimenteNoi);
             string detalii = JsonConvert.SerializeObject(evenimenteNoi.Detalii);
             var tipEveniment=evenimenteNoi.Tip;
-           
+            var idEveniment = evenimenteNoi.Id.ToString();
             var idRadacina=evenimenteNoi.IdRadacina.ToString();
 
-            using (var cn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename" +
-              @"='C:\Users\Andrei\Documents\GitHub\pssc-proiect\IterfataUtilizator\App_Data\Users.mdf';Integrated Security=True"))
+            using (var cn = new SqlConnection(connection))
             {
-                string _sql = @"INSERT INTO [dbo].[ParcAuto](TipEveniment,DetaliiEveniment,IdRadacina)" +
-                      "VALUES (@tipEveniment,@detalii,@IdRadacina)";
+                string _sql = @"INSERT INTO [dbo].[ParcAuto](IdEveniment,TipEveniment,DetaliiEveniment,IdRadacina)" +
+                      "VALUES (@idEveniment,@tipEveniment,@detalii,@IdRadacina)";
                 var cmd = new SqlCommand(_sql, cn);
+                cmd.Parameters
+                   .Add(new SqlParameter("@idEveniment", SqlDbType.VarChar))
+                   .Value = idEveniment;
                 cmd.Parameters
                     .Add(new SqlParameter("@tipEveniment", SqlDbType.VarChar))
                     .Value =tipEveniment;
@@ -75,8 +73,5 @@ namespace proiect_pssc
                 var reader = cmd.ExecuteReader();
             }
         }
-
-        
     }
-
 }

@@ -46,11 +46,38 @@ namespace proiect_pssc
          
         }
 
-        public List<Eveniment> IncarcaListaDeEvenimente()
+        public string UpdateMasina(string idRadacina)
         {
-            List<Eveniment> toateEvenimentele = new List<Eveniment>();
-            List<Eveniment> evenimenteCitite = new List<Eveniment>();
-            //    toateEvenimentele = JsonConvert.DeserializeObject<List<Eveniment>>(detalii);
+            string stare = "";
+            using (var cn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename" +
+             @"='C:\Users\Andrei\Documents\GitHub\pssc-proiect\IterfataUtilizator\App_Data\Users.mdf';Integrated Security=True"))
+            {
+                string _sql = @"SELECT * FROM [dbo].[ParcAuto] WHERE [IdRadacina]=@idRadacina";
+
+
+                var cmd = new SqlCommand(_sql, cn);
+                cmd.Parameters
+                    .Add(new SqlParameter("@idRadacina", SqlDbType.NVarChar))
+                    .Value = idRadacina;
+                cn.Open();
+                using (SqlDataReader reader = cmd.ExecuteReader())
+                {
+                    reader.Read();
+                    string[] tokens = reader["DetaliiEveniment"].ToString().Split(':');
+                    string[] stareMasina = tokens[19].Split(',');
+                    stare = stareMasina[0];
+                }
+
+
+            }
+            return stare;
+          
+        }
+
+        public List<Masina> IncarcaListaDeEvenimente()
+        {
+            List<string> marca = new List<string>();
+            List<Masina> masina = new List<Masina>();
 
             using (var cn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename" +
               @"='C:\Users\Andrei\Documents\GitHub\pssc-proiect\IterfataUtilizator\App_Data\Users.mdf';Integrated Security=True"))
@@ -62,17 +89,19 @@ namespace proiect_pssc
                 {
                     while (reader.Read())
                     {
-                        object detalii = JsonConvert.DeserializeObject<MasinaDes.RootObject>(reader["DetaliiEveniment"].ToString());
+                        string []tokens= reader["DetaliiEveniment"].ToString().Split('"');
+                        marca.Add(tokens[13]);
+                      
+                        Masina m = new Masina(new PlainText(tokens[5]),0,new PlainText(tokens[13]),new PlainText(tokens[19]),new PlainText(tokens[25]),new PlainText(tokens[37]),new PlainText(tokens[51]),new PlainText(tokens[46]),new PlainText(tokens[43]),new PlainText(tokens[31]));
+                        //object detalii = JsonConvert.DeserializeObject<MasinaDes.RootObject>(reader["DetaliiEveniment"].ToString());
                         // object detalii = JsonConvert.DeserializeObject<List<Eveniment>>(String.Format("{0}", reader["DetaliiEveniment"]));
+                        masina.Add(m);
 
-                       
-                        Eveniment e = new Eveniment(new PlainText(""),(TipEveniment)Enum.Parse(typeof(TipEveniment),reader["TipEveniment"].ToString()),detalii);
-                        evenimenteCitite.Add(e);
                     }
                 }
                 
             }
-            return toateEvenimentele;
+            return masina;
         }
     }
 

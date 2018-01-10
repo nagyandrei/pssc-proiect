@@ -15,7 +15,8 @@ namespace IterfataUtilizator.Controllers
         public ActionResult CautaMasina()
         {
 
-            return RedirectToAction("AfisareMasinaCautata","User");
+          //  return View("AfisareMasinaCautata","User");
+            return View();
         }
 
     }

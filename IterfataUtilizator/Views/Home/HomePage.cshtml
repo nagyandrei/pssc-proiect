@@ -1,0 +1,29 @@
+﻿
+@{
+    ViewBag.Title = "HomePage";
+}
+
+<h2>HomePage</h2>
+
+@using (Html.BeginForm("CautaMasina", "Home", new { enctype="multipart/form-data"}))
+{
+    <input type="submit" value="Cauta Masina">
+}
+
+<br/>
+
+@using (Html.BeginForm("AfisareMasini", "Home", new { enctype = "multipart/form-data" }))
+{
+    <input type="submit" value="Afisare Masini">
+}
+
+
+<br />
+
+<input type="button" value="Aprobare inregistrare" name="aprobare" /><br />
+<input type="button" value="Vizualizare lista masini" name="seeMasini" /><br />
+<input type="button" value="Adaugare masina" name="addMasina" /><br />
+<input type="button" value="Editare masina" name="editMasina" /><br />
+<input type="button" value="Stergere masina" name="deleteMasina" /><br />
+<input type="button" value="Vizualizare rapoarte" name="seeReports" />
+

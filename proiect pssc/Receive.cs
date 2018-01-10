@@ -23,7 +23,7 @@ namespace proiect_pssc
                 {
                     var body = ea.Body;
                     var message = Encoding.UTF8.GetString(body);
-                    Console.WriteLine(" [x] Received {0}", message);
+                  //  Console.WriteLine(" [x] Received {0}", message);
                 };
                 channel.BasicConsume(queue: "hello", autoAck: true, consumer: consumer);
 

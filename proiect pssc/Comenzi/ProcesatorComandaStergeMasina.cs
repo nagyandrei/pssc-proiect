@@ -11,7 +11,7 @@ namespace proiect_pssc.Comenzi
         public override void Proceseaza(ComandaStergeMasina comanda)
         {
             var write = new WriteRepository();
-            var gasit = write.StergereMasina("18");
+            var gasit = write.StergereMasina(comanda.CIV);
            
         }
     }

@@ -184,3 +184,6 @@ C:\Users\Andrei\Documents\GitHub\pssc-proiect\IterfataUtilizator\bin\Microsoft.D
 C:\Users\Andrei\Documents\GitHub\pssc-proiect\IterfataUtilizator\bin\RabbitMQ.Client.dll
 C:\Users\Andrei\Documents\GitHub\pssc-proiect\IterfataUtilizator\bin\Microsoft.Diagnostics.Tracing.EventSource.xml
 C:\Users\Andrei\Documents\GitHub\pssc-proiect\IterfataUtilizator\bin\RabbitMQ.Client.xml
+C:\Users\Andrei\Documents\GitHub\pssc-proiect\IterfataUtilizator\bin\proiect pssc.exe
+C:\Users\Andrei\Documents\GitHub\pssc-proiect\IterfataUtilizator\bin\proiect pssc.pdb
+C:\Users\Andrei\Documents\GitHub\pssc-proiect\IterfataUtilizator\bin\proiect pssc.exe.config
