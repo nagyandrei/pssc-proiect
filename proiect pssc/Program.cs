@@ -19,7 +19,7 @@ namespace proiect_pssc
             MagistralaEvenimente.Instanta.Value.InregistreazaProcesatoareStandard();
             MagistralaEvenimente.Instanta.Value.InchideInregistrarea();
 
-            var masina = new Masina(new PlainText("19"),TipMasina.Berlina,new PlainText("Opel"),new PlainText("2031"),new PlainText("200k+"),new PlainText("1.9tdi"),
+            var masina = new Masina(new PlainText("5"),TipMasina.Berlina,new PlainText("Opel"),new PlainText("2031"),new PlainText("200k+"),new PlainText("1.9tdi"),
                                     new PlainText("1986"),new PlainText("300cp"),new PlainText("rosu"),new PlainText("nu bate nu trocane"));
 
             var admin = new Administrator(new PlainText("bonny"),new PlainText("lash"));
@@ -52,7 +52,7 @@ namespace proiect_pssc
             //read.PrimesteEveiment();
 
            // Console.WriteLine(gasit);
-            Console.ReadKey();
+          //  Console.ReadKey();
            
         }
     }

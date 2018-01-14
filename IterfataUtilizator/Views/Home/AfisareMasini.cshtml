@@ -6,7 +6,7 @@
 <h2>AfisareMasini</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Adauga Masina","AdaugaMasina")
 </p>
 <table class="table">
     <tr>
@@ -78,7 +78,7 @@
     </td >
         <td >
             @Html.ActionLink("Edit", "Edit") |
-            @Html.ActionLink("Delete", "Delete")
+            @Html.ActionLink("Delete", "Delete", new { @class = "linkStyle", CIV = item.CIV.ToString() })
         </td >
     </tr >
 }

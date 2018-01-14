@@ -1,0 +1,76 @@
+﻿@model IterfataUtilizator.Models.MasinaMVC
+
+@{
+    ViewBag.Title = "AdaugaMasina";
+}
+
+<h2>AdaugaMasina</h2>
+
+@using (Html.BeginForm("AdaugaMasina", "Home", new { enctype = "multipart/form-data" }))
+{
+    <div>
+        <fieldset>
+            <div class="editor-label">
+                @Html.LabelFor(m => m.CIV)
+            </div>
+            <div class="editor-field">
+                @Html.TextBoxFor(m => m.CIV)
+            </div>
+            <div class="editor-label">
+                @Html.LabelFor(m => m.Tip)
+            </div>
+            <div class="editor-field">
+                @Html.TextBoxFor(m => m.Tip)
+            </div>
+            <div class="editor-label">
+                @Html.LabelFor(m => m.Marca)
+            </div>
+            <div class="editor-field">
+                @Html.TextBoxFor(m => m.Marca)
+            </div>
+            <div class="editor-label">
+                @Html.LabelFor(m => m.An)
+            </div>
+            <div class="editor-field">
+                @Html.TextBoxFor(m => m.An)
+            </div>
+            <div class="editor-label">
+                @Html.LabelFor(m => m.Kilometraj)
+            </div>
+            <div class="editor-field">
+                @Html.TextBoxFor(m => m.Kilometraj)
+            </div>
+            <div class="editor-label">
+                @Html.LabelFor(m => m.Descriere)
+            </div>
+            <div class="editor-field">
+                @Html.TextBoxFor(m => m.Descriere)
+            </div>
+            <div class="editor-label">
+                @Html.LabelFor(m => m.Motorizare)
+            </div>
+            <div class="editor-field">
+                @Html.TextBoxFor(m => m.Motorizare)
+            </div>
+            <div class="editor-label">
+                @Html.LabelFor(m => m.Culoare)
+            </div>
+            <div class="editor-field">
+                @Html.TextBoxFor(m => m.Culoare)
+            </div>
+            <div class="editor-label">
+                @Html.LabelFor(m => m.Putere)
+            </div>
+            <div class="editor-field">
+                @Html.TextBoxFor(m => m.Putere)
+            </div>
+            <div class="editor-label">
+                @Html.LabelFor(m => m.CapacitateCilindrica)
+            </div>
+            <div class="editor-field">
+                @Html.TextBoxFor(m => m.CapacitateCilindrica)
+            </div>
+            <input type="submit" value="Adauga" />
+        </fieldset>
+    </div>
+}

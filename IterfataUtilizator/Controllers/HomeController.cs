@@ -17,6 +17,9 @@ namespace IterfataUtilizator.Controllers
 {
     public class HomeController : Controller
     {
+        List<Masina> masinaRepo = new List<Masina>();
+        List<MasinaMVC> masinaMVC = new List<MasinaMVC>();
+
         public ActionResult Index()
         {
             return View("Login");
@@ -39,6 +42,27 @@ namespace IterfataUtilizator.Controllers
         public ActionResult CautaMasina()
         {
             return View();
+        }
+
+        public ActionResult AdaugaMasina1()
+        {
+            return View("AdaugaMasina");
+        }
+
+        [HttpPost]
+        public ActionResult AdaugaMasina(Models.MasinaMVC mVC)
+        {
+            MagistralaComenzi.Instanta.Value.InregistreazaProcesatoareStandard();
+            MagistralaEvenimente.Instanta.Value.InregistreazaProcesatoareStandard();
+            MagistralaEvenimente.Instanta.Value.InchideInregistrarea();
+            var comandaAdaugaMasina = new ComandaAdaugaMasina();
+            Masina m = new Masina(new PlainText(mVC.CIV.ToString()),mVC.Tip,new PlainText(mVC.Marca.ToString()),new PlainText(mVC.An.ToString()),
+                new PlainText(mVC.Kilometraj.ToString()),new PlainText(mVC.Motorizare.ToString()),new PlainText(mVC.CapacitateCilindrica.ToString()),new PlainText(mVC.Putere.ToString()),
+                new PlainText(mVC.Culoare.ToString()),new PlainText(mVC.Descriere.ToString()));
+            comandaAdaugaMasina.Masina1 = m;
+            MagistralaComenzi.Instanta.Value.Trimite(comandaAdaugaMasina);
+
+            return View("AfisareMasini");
         }
 
         [HttpPost]
@@ -65,7 +89,7 @@ namespace IterfataUtilizator.Controllers
             return RedirectToAction("HomePage", "Home");
         }
 
-        public ActionResult Delete(string CIV)
+        public ActionResult Delete(string CIV )
         {
             //var config = new DDDconfig();
             //config.config();
@@ -74,18 +98,17 @@ namespace IterfataUtilizator.Controllers
             MagistralaEvenimente.Instanta.Value.InchideInregistrarea();
             var masina = new MasinaMVC();
             var comandaStergereMasina = new ComandaStergeMasina();
-            comandaStergereMasina.CIV = CIV;
+            comandaStergereMasina.CIV = CIV.ToString();
+            masinaMVC.Remove(masinaMVC.Find(_=>_.CIV.Equals(CIV)));
             MagistralaComenzi.Instanta.Value.Trimite(comandaStergereMasina);
 
-            return View();
+            return View("HomePage");
         }
 
         public ActionResult AfisareMasini()
         {
             var repo = new ReadRepository();
-            List<Masina> masinaRepo = new List<Masina>();
             masinaRepo = repo.IncarcaListaDeEvenimente();
-            List<MasinaMVC> masinaMVC = new List<MasinaMVC>();
 
             masinaMVC = masinaRepo.Select(x => 
             new MasinaMVC {
