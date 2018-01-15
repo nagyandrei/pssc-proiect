@@ -38,6 +38,7 @@ namespace Model.Masina
             Kilometraj = km;
             Descriere = descriere;
             Motorizare = motorizare;
+            Putere = putere;
             CapacitateCilindrica = cc;
             Culoare = culoare;
         }

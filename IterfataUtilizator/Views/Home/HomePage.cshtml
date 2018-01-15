@@ -22,11 +22,18 @@
 
 @using (Html.BeginForm("AdaugaMasina1", "Home", new { enctype = "multipart/form-data" }))
 {
-    <input type="submit" value="AdaugaMasina">
+    <input type="submit" value="Adauga Masina">
 }
 
 
-<input type="button" value="Adauga Masina" name="aprobare" /><br />
+<br />
+
+@using (Html.BeginForm("CautaMasina1", "Home", new { enctype = "multipart/form-data" }))
+{
+    <input type="submit" value="Cauta Masina">
+}
+
+<input type="button" value="Cauta Masina" name="aprobare" /><br />
 <input type="button" value="Vizualizare lista masini" name="seeMasini" /><br />
 <input type="button" value="Adaugare masina" name="addMasina" /><br />
 <input type="button" value="Editare masina" name="editMasina" /><br />

@@ -6,7 +6,9 @@
 
 <h2>AdaugaMasina</h2>
 
-@using (Html.BeginForm("AdaugaMasina", "Home", new { enctype = "multipart/form-data" }))
+
+@using (Html.BeginForm("AdaugaMasina", "Home", FormMethod.Post, new { @class = "linkStyle", mVC = @Model }))
+
 {
     <div>
         <fieldset>

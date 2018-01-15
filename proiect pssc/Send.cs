@@ -17,12 +17,12 @@ namespace proiect_pssc
             using (var connection = factory.CreateConnection())
             using (var channel = connection.CreateModel())
             {
-                channel.QueueDeclare(queue: "hello", durable: false, exclusive: false, autoDelete: false, arguments: null);
+                channel.QueueDeclare(queue: "ParcAuto", durable: false, exclusive: false, autoDelete: false, arguments: null);
 
-                string message = JsonConvert.SerializeObject(e.Detalii).ToString();
+                string message = e.Tip.ToString();
                 var body = Encoding.UTF8.GetBytes(message);
 
-                channel.BasicPublish(exchange: "", routingKey: "hello", basicProperties: null, body: body);
+                channel.BasicPublish(exchange: "", routingKey: "ParcAuto", basicProperties: null, body: body);
               //  Console.WriteLine(" [x] Sent {0}", message);
             }
            

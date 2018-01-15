@@ -6,39 +6,39 @@
 <h2>AfisareMasini</h2>
 
 <p>
-    @Html.ActionLink("Adauga Masina","AdaugaMasina")
+    @Html.ActionLink("Adauga Masina","AdaugaMasina1")
 </p>
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.CIV.Text)
+            @Html.DisplayNameFor(model => model.CIV)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Tip)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Marca.Text)
+            @Html.DisplayNameFor(model => model.Marca)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.An.Text))
+            @Html.DisplayNameFor(model => model.An))
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Kilometraj.Text)
+            @Html.DisplayNameFor(model => model.Kilometraj)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Descriere.Text)
+            @Html.DisplayNameFor(model => model.Descriere)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Motorizare.Text)
+            @Html.DisplayNameFor(model => model.Motorizare)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Culoare.Text)
+            @Html.DisplayNameFor(model => model.Culoare)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Putere.Text)
+            @Html.DisplayNameFor(model => model.Putere)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.CapacitateCilindrica.Text)
+            @Html.DisplayNameFor(model => model.CapacitateCilindrica)
         </th>
         <th></th>
     </tr>
@@ -46,35 +46,35 @@
 @foreach (var item in Model) {
     <tr>
         <td >
-            @Html.DisplayFor(modelItem => item.CIV.Text)
+            @Html.DisplayFor(modelItem => item.CIV)
   
         </td >
         <td >
             @Html.DisplayFor(modelItem => item.Tip)
         </td >
         <td >
-            @Html.DisplayFor(modelItem => item.Marca.Text)
+            @Html.DisplayFor(modelItem => item.Marca)
         </td >
         <td >
-            @Html.DisplayFor(modelItem => item.An.Text)
+            @Html.DisplayFor(modelItem => item.An)
         </td >
         <td >
-            @Html.DisplayFor(modelItem => item.Kilometraj.Text)
+            @Html.DisplayFor(modelItem => item.Kilometraj)
         </td >
     <td>
-    @Html.DisplayFor(modelItem => item.Descriere.Text)
+    @Html.DisplayFor(modelItem => item.Descriere)
     </td >
     <td>
-    @Html.DisplayFor(modelItem => item.Motorizare.Text)
+    @Html.DisplayFor(modelItem => item.Motorizare)
     </td >
     <td >
-    @Html.DisplayFor(modelItem => item.Culoare.Text)
+    @Html.DisplayFor(modelItem => item.Culoare)
     </td >
     <td >
-    @Html.DisplayFor(modelItem => item.Putere.Text)
+    @Html.DisplayFor(modelItem => item.Putere)
     </td >
     <td >
-    @Html.DisplayFor(modelItem => item.CapacitateCilindrica.Text)
+    @Html.DisplayFor(modelItem => item.CapacitateCilindrica)
     </td >
         <td >
             @Html.ActionLink("Edit", "Edit") |

@@ -8,9 +8,9 @@ using System.Web;
 
 namespace IterfataUtilizator.App_Start
 {
-    public class DDDconfig
+    public static class DDDconfig
     {
-        public void config()
+        public static void config()
         {
             MagistralaComenzi.Instanta.Value.InregistreazaProcesatoareStandard();
             MagistralaEvenimente.Instanta.Value.InregistreazaProcesatoareStandard();
