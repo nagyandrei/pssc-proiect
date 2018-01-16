@@ -22,14 +22,16 @@ namespace Model.Masina
         public PlainText Culoare { get; private set; }
         public PlainText Putere { get; private set; }
         public PlainText CapacitateCilindrica { get; private set; }
-        public StareMasina stare { get; private set; }
+        public PlainText Pret { get; private set; }
+        public PlainText Model { get; private set; }
+        public StareMasina stare { get;  set; }
 
         private readonly List<Eveniment> _evenimenteNoi = new List<Eveniment>();
         public ReadOnlyCollection<Eveniment> EvenimenteNoi { get => _evenimenteNoi.AsReadOnly(); }
 
         private MagistralaEvenimente _magistralaEveniment;
 
-        public Masina(PlainText civ, TipMasina tip, PlainText marca, PlainText an, PlainText km, PlainText motorizare, PlainText cc, PlainText putere, PlainText culoare, PlainText descriere)
+        public Masina(PlainText civ, TipMasina tip, PlainText marca, PlainText model, PlainText an, PlainText pret, PlainText km, PlainText motorizare, PlainText cc, PlainText putere, PlainText culoare, PlainText descriere)
         {
             CIV = civ;
             Tip = tip;
@@ -41,6 +43,8 @@ namespace Model.Masina
             Putere = putere;
             CapacitateCilindrica = cc;
             Culoare = culoare;
+            Pret = pret;
+            Model = model;
         }
 
         public Masina()
@@ -94,11 +98,12 @@ namespace Model.Masina
             //methond to be implemented
         }
 
-        public void RezevaMasina(Masina masina, StareMasina stare)
+        public void RezevaMasina(Masina masina)
         {
-            if (stare != StareMasina.InStoc) throw new InvalidOperationException("Nu exista masina pe stoc");
+            if (masina.stare != StareMasina.InStoc) throw new InvalidOperationException("Nu exista masina pe stoc");
             else
             {
+             //   masina.stare = StareMasina.Rezervata;
                 var e = new EvenimentGeneric<Masina>(masina.CIV, TipEveniment.RezervaMasina, masina);
                 AplicaRezervare(e);
                 PublicaEveniment(e);
@@ -107,7 +112,7 @@ namespace Model.Masina
 
         private void AplicaRezervare(EvenimentGeneric<Masina> e)
         {
-            stare = StareMasina.Rezervata;
+            e.Detalii.stare = StareMasina.Rezervata;
         }
 
         public override string ToString()

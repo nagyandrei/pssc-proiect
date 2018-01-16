@@ -33,6 +33,15 @@
     <input type="submit" value="Cauta Masina">
 }
 
+<br />
+
+@using (Html.BeginForm("AfisareMasiniRezervate", "Home", new { enctype = "multipart/form-data" }))
+{
+    <input type="submit" value="Afisare masini rezervate">
+}
+
+<br />
+
 <input type="button" value="Cauta Masina" name="aprobare" /><br />
 <input type="button" value="Vizualizare lista masini" name="seeMasini" /><br />
 <input type="button" value="Adaugare masina" name="addMasina" /><br />

@@ -40,6 +40,9 @@
         <th>
             @Html.DisplayNameFor(model => model.CapacitateCilindrica)
         </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Stare)
+        </th>
         <th></th>
     </tr>
 
@@ -61,24 +64,28 @@
         <td >
             @Html.DisplayFor(modelItem => item.Kilometraj)
         </td >
-    <td>
-    @Html.DisplayFor(modelItem => item.Descriere)
-    </td >
-    <td>
-    @Html.DisplayFor(modelItem => item.Motorizare)
-    </td >
-    <td >
-    @Html.DisplayFor(modelItem => item.Culoare)
-    </td >
-    <td >
-    @Html.DisplayFor(modelItem => item.Putere)
-    </td >
-    <td >
-    @Html.DisplayFor(modelItem => item.CapacitateCilindrica)
-    </td >
+        <td>
+        @Html.DisplayFor(modelItem => item.Descriere)
+        </td >
+        <td>
+        @Html.DisplayFor(modelItem => item.Motorizare)
+        </td >
+        <td >
+        @Html.DisplayFor(modelItem => item.Culoare)
+        </td >
+        <td >
+        @Html.DisplayFor(modelItem => item.Putere)
+        </td >
+        <td >
+        @Html.DisplayFor(modelItem => item.CapacitateCilindrica)
+        </td >
+        <td>
+            @Html.DisplayFor(modelItem => item.Stare)
+        </td>
         <td >
             @Html.ActionLink("Edit", "Edit") |
-            @Html.ActionLink("Delete", "Delete", new { @class = "linkStyle", CIV = item.CIV.ToString() })
+            @Html.ActionLink("Delete", "Delete", new { @class = "linkStyle", CIV = item.CIV.ToString() }) |
+            @Html.ActionLink("Rezerva", "Rezerva", new { @class = "linkStyle", CIV = item.CIV.ToString() })
         </td >
     </tr >
 }

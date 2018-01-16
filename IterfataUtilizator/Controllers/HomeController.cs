@@ -50,7 +50,7 @@ namespace IterfataUtilizator.Controllers
             {
                 string ceva = x.CIV.ToString();
                 var mVC = new MasinaMVC(
-                                        x.CIV.ToString(), x.Tip, x.Marca.ToString(), x.An.ToString(), x.Kilometraj.ToString(),
+                                        x.CIV.ToString(), x.Tip, x.Marca.ToString(),x.Model.ToString(), x.An.ToString(),x.Pret.ToString(), x.Kilometraj.ToString(),
                                         x.Descriere.ToString(), x.Motorizare.ToString(), x.Culoare.ToString(), x.Putere.ToString(),
                                         x.CapacitateCilindrica.ToString()
                                         );
@@ -72,7 +72,17 @@ namespace IterfataUtilizator.Controllers
         {
             return View("CautaMasina");
         }
-
+        
+        public ActionResult Rezerva(string CIV)
+        {
+            var repo = new ReadRepository();
+            var masina= repo.CautaMasina(CIV);
+            //masina.stare = proiect_pssc.Model.Masina.StareMasina.Rezervata;
+            var comandaRezervaMasina = new ComandaRezervaMasina();
+            comandaRezervaMasina.Masina=masina;
+            MagistralaComenzi.Instanta.Value.Trimite(comandaRezervaMasina);
+            return View("HomePage");
+        }
        
 
         [HttpPost]
@@ -83,8 +93,8 @@ namespace IterfataUtilizator.Controllers
             //MagistralaEvenimente.Instanta.Value.InchideInregistrarea();
             //Berilna
             var comandaAdaugaMasina = new ComandaAdaugaMasina();
-            Masina m = new Masina(new PlainText(mVC.CIV),mVC.Tip,new PlainText(mVC.Marca.ToString()),
-                new PlainText(mVC.An),new PlainText(mVC.Kilometraj),new PlainText(mVC.Motorizare),
+            Masina m = new Masina(new PlainText(mVC.CIV),mVC.Tip,new PlainText(mVC.Marca.ToString()),new PlainText(mVC.Model.ToString()),
+                new PlainText(mVC.An),new PlainText(mVC.Pret.ToString()),new PlainText(mVC.Kilometraj),new PlainText(mVC.Motorizare),
                 new PlainText(mVC.CapacitateCilindrica),new PlainText(mVC.Putere),
                 new PlainText(mVC.Culoare),new PlainText(mVC.Descriere));
             comandaAdaugaMasina.Masina1 = m;
@@ -119,10 +129,7 @@ namespace IterfataUtilizator.Controllers
 
         public ActionResult Delete(string CIV )
         {
-            //var config = new DDDconfig();
-            //config.config();
-           
-           // var masina = new MasinaMVC();
+
             var comandaStergereMasina = new ComandaStergeMasina();
             comandaStergereMasina.CIV = CIV.ToString();
             masinaMVC.Remove(masinaMVC.Find(_=>_.CIV.Equals(CIV)));
@@ -142,28 +149,46 @@ namespace IterfataUtilizator.Controllers
                 Console.WriteLine(x.CIV.ToString());
                 string ceva = x.CIV.ToString();
                 var mVC = new MasinaMVC(
-                                        x.CIV.ToString(),x.Tip,x.Marca.ToString(),x.An.ToString(),x.Kilometraj.ToString(),
+                                        x.CIV.ToString(),x.Tip,x.Marca.ToString(),x.ToString(),x.An.ToString(),x.Pret.ToString(),x.Kilometraj.ToString(),
                                         x.Descriere.ToString(),x.Motorizare.ToString(),x.Culoare.ToString(),x.Putere.ToString(),
                                         x.CapacitateCilindrica.ToString()
                                         );
-               
-                masina.Add(mVC);
+
+                
+                    mVC.Stare = x.stare;
+                    masina.Add(mVC);
+                
             }
-            //masinaMVC = masinaRepo.Select(x => 
-            //new MasinaMVC {
-            //    CIV = x.CIV.Text,
-            //    Tip = x.Tip,
-            //    Marca = x.Marca.Text,
-            //    An = x.An.Text,
-            //    Kilometraj = x.Kilometraj.Text,
-            //    Descriere = x.Descriere.Text,
-            //    Motorizare = x.Motorizare.Text,
-            //    Culoare = x.Culoare.Text,
-            //    Putere = x.Putere.Text,
-            //    CapacitateCilindrica = x.CapacitateCilindrica.Text
-            //}).ToList();
             ViewBag.Model = masina;
             return View(masina);
+        }
+
+        public ActionResult AfisareMasiniRezervate()
+        {
+            var repo = new ReadRepository();
+            masinaRepo = repo.IncarcaListaMasini();
+            var eventRepo = repo.IncarcaListaDeEvenimente();
+            List<MasinaMVC> masina = new List<MasinaMVC>();
+            foreach (Masina x in masinaRepo)
+            {
+                Console.WriteLine(x.CIV.ToString());
+                string ceva = x.CIV.ToString();
+                var mVC = new MasinaMVC(
+                                        x.CIV.ToString(), x.Tip, x.Marca.ToString(), x.ToString(), x.An.ToString(), x.Pret.ToString(), x.Kilometraj.ToString(),
+                                        x.Descriere.ToString(), x.Motorizare.ToString(), x.Culoare.ToString(), x.Putere.ToString(),
+                                        x.CapacitateCilindrica.ToString()
+                                        );
+
+
+                if (mVC.Stare == proiect_pssc.Model.Masina.StareMasina.Rezervata)
+                {
+                    mVC.Stare = x.stare;
+                    masina.Add(mVC);
+                }
+
+            }
+            ViewBag.Model = masina;
+            return View("AfisareMasini",masina);
         }
 
     }

@@ -12,7 +12,7 @@ namespace proiect_pssc.Comenzi
         public override void Proceseaza(ComandaRezervaMasina comanda)
         {
             Masina masina = new Masina();
-           // masina.RezevaMasina(comanda.Masina);
+            masina.RezevaMasina(comanda.Masina);
         }
     }
 }

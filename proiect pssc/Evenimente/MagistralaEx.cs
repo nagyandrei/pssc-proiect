@@ -12,7 +12,7 @@ namespace proiect_pssc.Evenimente
         public static void InregistreazaProcesatoareStandard(this MagistralaEvenimente magistrala)
         {
             magistrala.InregistreazaProcesator(TipEveniment.AdaugareMasina, new ProcesatorAdaugaMasina());
-           // magistrala.InregistreazaProcesator(TipEveniment.TerminareMeci, new ProcesatorTerminareMeci());
+            magistrala.InregistreazaProcesator(TipEveniment.RezervaMasina, new ProcesatorRezervaMasina());
         }
     }
 }

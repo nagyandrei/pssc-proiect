@@ -16,8 +16,9 @@ namespace proiect_pssc
 {
     public class ReadRepository
     {
-        public bool CautaMasina(string idRadacina)
+        public Masina CautaMasina(string idRadacina)
         {
+            Masina m = new Masina();
             using (var cn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename" +
              @"='C:\Users\Andrei\Documents\GitHub\pssc-proiect\IterfataUtilizator\App_Data\Users.mdf';Integrated Security=True"))
             {
@@ -30,20 +31,24 @@ namespace proiect_pssc
                     .Value = idRadacina;
 
                 cn.Open();
-                var reader = cmd.ExecuteReader();
-                if (reader.HasRows)
+                using (SqlDataReader reader = cmd.ExecuteReader())
                 {
-                    reader.Dispose();
-                    cmd.Dispose();
-                    return true;
+                    while (reader.Read())
+                    {
+                        string[] tokens = reader["DetaliiEveniment"].ToString().Split('"');
+                        //     marca.Add(tokens[13]);
+                        string tip = Regex.Match(tokens[8], @"\d+").Value;
+                        m = new Masina(new PlainText(tokens[5]), (TipMasina)Enum.Parse(typeof(TipMasina), tip), new PlainText(tokens[13]), new PlainText(tokens[67]), new PlainText(tokens[19]), new PlainText(tokens[61]), new PlainText(tokens[25]), new PlainText(tokens[37]), new PlainText(tokens[51]), new PlainText(tokens[45]), new PlainText(tokens[43]), new PlainText(tokens[31]));
+                        string stare = Regex.Match(tokens[70], @"\d+").Value;
+                        //object detalii = JsonConvert.DeserializeObject<MasinaDes.RootObject>(reader["DetaliiEveniment"].ToString());
+                        // object detalii = JsonConvert.DeserializeObject<List<Eveniment>>(String.Format("{0}", reader["DetaliiEveniment"]));
+                        m.stare = (StareMasina)Enum.Parse(typeof(StareMasina), stare);
+                       
+                    }
                 }
-                else
-                {
-                    reader.Dispose();
-                    cmd.Dispose();
-                    return false;
-                }
+
             }
+            return m;
 
         }
 
@@ -93,11 +98,12 @@ namespace proiect_pssc
                         string[] tokens = reader["DetaliiEveniment"].ToString().Split('"');
                    //     marca.Add(tokens[13]);
                         string tip = Regex.Match(tokens[8], @"\d+").Value;
-                        Masina m = new Masina(new PlainText(tokens[5]), (TipMasina)Enum.Parse(typeof(TipMasina), tip), new PlainText(tokens[13]), new PlainText(tokens[19]), new PlainText(tokens[25]), new PlainText(tokens[37]), new PlainText(tokens[51]), new PlainText(tokens[45]), new PlainText(tokens[43]), new PlainText(tokens[31]));
+                        Masina m = new Masina(new PlainText(tokens[5]), (TipMasina)Enum.Parse(typeof(TipMasina), tip), new PlainText(tokens[13]), new PlainText(tokens[67]),new PlainText(tokens[19]), new PlainText(tokens[61]),new PlainText(tokens[25]), new PlainText(tokens[37]), new PlainText(tokens[51]), new PlainText(tokens[45]), new PlainText(tokens[43]), new PlainText(tokens[31]));
+                        string stare = Regex.Match(tokens[70], @"\d+").Value;
                         //object detalii = JsonConvert.DeserializeObject<MasinaDes.RootObject>(reader["DetaliiEveniment"].ToString());
                         // object detalii = JsonConvert.DeserializeObject<List<Eveniment>>(String.Format("{0}", reader["DetaliiEveniment"]));
+                        m.stare = (StareMasina)Enum.Parse(typeof(StareMasina), stare);
                         masina.Add(m);
-
                     }
                 }
 
@@ -125,10 +131,11 @@ namespace proiect_pssc
                         string[] tokens = reader["DetaliiEveniment"].ToString().Split('"');
                       //  marca.Add(tokens[13]);
                         string tip = Regex.Match(tokens[8], @"\d+").Value;
-                        Masina m = new Masina(new PlainText(tokens[5]), (TipMasina)Enum.Parse(typeof(TipMasina), tip), new PlainText(tokens[13]), new PlainText(tokens[19]), new PlainText(tokens[25]), new PlainText(tokens[37]), new PlainText(tokens[51]), new PlainText(tokens[45]), new PlainText(tokens[43]), new PlainText(tokens[31]));
+                        Masina m = new Masina(new PlainText(tokens[5]), (TipMasina)Enum.Parse(typeof(TipMasina), tip), new PlainText(tokens[13]), new PlainText(tokens[67]), new PlainText(tokens[19]), new PlainText(tokens[61]), new PlainText(tokens[25]), new PlainText(tokens[37]), new PlainText(tokens[51]), new PlainText(tokens[45]), new PlainText(tokens[43]), new PlainText(tokens[31]));
+                        string stare = Regex.Match(tokens[70], @"\d+").Value;
                         //object detalii = JsonConvert.DeserializeObject<MasinaDes.RootObject>(reader["DetaliiEveniment"].ToString());
                         // object detalii = JsonConvert.DeserializeObject<List<Eveniment>>(String.Format("{0}", reader["DetaliiEveniment"]));
-                        // masina.Add(m);
+                        m.stare = (StareMasina)Enum.Parse(typeof(StareMasina), stare);
                         Eveniment ev = new Eveniment(new PlainText(reader["IdRadacina"].ToString()), (TipEveniment)Enum.Parse(typeof(TipEveniment), reader["TipEveniment"].ToString()), m);
                         e.Add(ev);
                     }
