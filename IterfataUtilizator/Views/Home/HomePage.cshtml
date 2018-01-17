@@ -42,10 +42,12 @@
 
 <br />
 
-<input type="button" value="Cauta Masina" name="aprobare" /><br />
-<input type="button" value="Vizualizare lista masini" name="seeMasini" /><br />
-<input type="button" value="Adaugare masina" name="addMasina" /><br />
-<input type="button" value="Editare masina" name="editMasina" /><br />
-<input type="button" value="Stergere masina" name="deleteMasina" /><br />
-<input type="button" value="Vizualizare rapoarte" name="seeReports" />
+
+
+@{
+    string mesaj = ViewBag.mesaj;
+    if (mesaj != null)
+    { <p>@mesaj</p>}
+
+}
 

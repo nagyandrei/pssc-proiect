@@ -11,7 +11,7 @@ namespace proiect_pssc
 {
     public class Send
     {
-        public void TrimiteEveniment(Eveniment e)
+        public void TrimiteEveniment(string mesaj)
         {
             var factory = new ConnectionFactory() { HostName = "localhost" };
             using (var connection = factory.CreateConnection())
@@ -19,11 +19,11 @@ namespace proiect_pssc
             {
                 channel.QueueDeclare(queue: "ParcAuto", durable: false, exclusive: false, autoDelete: false, arguments: null);
 
-                string message = e.Tip.ToString();
+                string message = mesaj;
                 var body = Encoding.UTF8.GetBytes(message);
 
                 channel.BasicPublish(exchange: "", routingKey: "ParcAuto", basicProperties: null, body: body);
-              //  Console.WriteLine(" [x] Sent {0}", message);
+           
             }
            
         }

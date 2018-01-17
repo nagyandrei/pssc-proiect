@@ -15,5 +15,6 @@ namespace proiect_pssc.Evenimente
         RezervaMasina,
         StergereMasina,
         EditareMasina,
+        CumparaMasina
     }
 }

@@ -98,6 +98,17 @@ namespace Model.Masina
             //methond to be implemented
         }
 
+        public void VindeMasina(Masina masina)
+        {
+            if(masina.stare != StareMasina.InStoc) throw new InvalidOperationException("Nu exista masina pe stoc");
+            else
+            {
+                var e = new EvenimentGeneric<Masina>(masina.CIV, TipEveniment.VanzareMasina, masina);
+                AplicaVanzare(e);
+                PublicaEveniment(e);
+            }
+        }
+
         public void RezevaMasina(Masina masina)
         {
             if (masina.stare != StareMasina.InStoc) throw new InvalidOperationException("Nu exista masina pe stoc");
@@ -113,6 +124,11 @@ namespace Model.Masina
         private void AplicaRezervare(EvenimentGeneric<Masina> e)
         {
             e.Detalii.stare = StareMasina.Rezervata;
+        }
+
+        private void AplicaVanzare(EvenimentGeneric<Masina> e)
+        {
+            e.Detalii.stare = StareMasina.StocInsuficient;
         }
 
         public override string ToString()

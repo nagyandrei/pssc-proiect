@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Model.Masina;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,7 +11,8 @@ namespace proiect_pssc.Comenzi
     {
         public override void Proceseaza(ComandaVindeMasina comanda)
         {
-            throw new NotImplementedException();
+            Masina masina = new Masina();
+            masina.VindeMasina(comanda.Masina);
         }
     }
 }

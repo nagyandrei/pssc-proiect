@@ -17,7 +17,7 @@ namespace proiect_pssc.Evenimente
         
             var repo = new WriteRepository();
             var trimite = new Send();
-            trimite.TrimiteEveniment(e);
+            trimite.TrimiteEveniment("Masina a fost Adaugata");
             repo.SalvareEvenimente(e);
            
         }

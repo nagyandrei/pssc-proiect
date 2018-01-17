@@ -83,9 +83,9 @@
             @Html.DisplayFor(modelItem => item.Stare)
         </td>
         <td >
-            @Html.ActionLink("Edit", "Edit") |
             @Html.ActionLink("Delete", "Delete", new { @class = "linkStyle", CIV = item.CIV.ToString() }) |
-            @Html.ActionLink("Rezerva", "Rezerva", new { @class = "linkStyle", CIV = item.CIV.ToString() })
+            @Html.ActionLink("Rezerva", "Rezerva", new { @class = "linkStyle", CIV = item.CIV.ToString() }) |
+            @Html.ActionLink("Cumpara", "Cumpara", new { @class = "linkStyle", CIV = item.CIV.ToString() })
         </td >
     </tr >
 }

@@ -13,6 +13,7 @@ namespace proiect_pssc.Evenimente
         {
             magistrala.InregistreazaProcesator(TipEveniment.AdaugareMasina, new ProcesatorAdaugaMasina());
             magistrala.InregistreazaProcesator(TipEveniment.RezervaMasina, new ProcesatorRezervaMasina());
+            magistrala.InregistreazaProcesator(TipEveniment.VanzareMasina, new ProcesatorVindeMasina());
         }
     }
 }

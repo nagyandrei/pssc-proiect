@@ -40,26 +40,27 @@ namespace IterfataUtilizator.Controllers
         }
 
         [HttpPost]
-        public ActionResult CautaMasina()
+        public ActionResult CautaMasina(MasinaMVC mVC)
         {
             var repo = new ReadRepository();
             masinaRepo = repo.IncarcaListaMasini();
-            var eventRepo = repo.IncarcaListaDeEvenimente();
-            List<MasinaMVC> masina = new List<MasinaMVC>();
-            foreach (Masina x in masinaRepo)
+            //  var eventRepo = repo.IncarcaListaDeEvenimente();
+            var masina = repo.CautaMasina(mVC.CIV);
+              List<MasinaMVC> masinaMVC = new List<MasinaMVC>();
+
+            if (masina != null)
             {
-                string ceva = x.CIV.ToString();
-                var mVC = new MasinaMVC(
-                                        x.CIV.ToString(), x.Tip, x.Marca.ToString(),x.Model.ToString(), x.An.ToString(),x.Pret.ToString(), x.Kilometraj.ToString(),
-                                        x.Descriere.ToString(), x.Motorizare.ToString(), x.Culoare.ToString(), x.Putere.ToString(),
-                                        x.CapacitateCilindrica.ToString()
-                                        );
-
-                masina.Add(mVC);
+                var masinaCautata = new MasinaMVC(
+                                            masina.CIV.ToString(), masina.Tip, masina.Marca.ToString(), masina.Model.ToString(), masina.An.ToString(), masina.Pret.ToString(), masina.Kilometraj.ToString(),
+                                            masina.Descriere.ToString(), masina.Motorizare.ToString(), masina.Culoare.ToString(), masina.Putere.ToString(),
+                                            masina.CapacitateCilindrica.ToString()
+                                            );
+                masinaMVC.Add(masinaCautata);
             }
+            
 
-            ViewBag.Model = masina;
-            return View(masina);
+            ViewBag.Model = masinaMVC;
+            return View("AfisareMasini",masinaMVC);
            
         }
 
@@ -81,17 +82,31 @@ namespace IterfataUtilizator.Controllers
             var comandaRezervaMasina = new ComandaRezervaMasina();
             comandaRezervaMasina.Masina=masina;
             MagistralaComenzi.Instanta.Value.Trimite(comandaRezervaMasina);
+            var receive = new Receive();
+            var mesaj = receive.PrimesteEveiment();
+            ViewBag.masaj = mesaj;
             return View("HomePage");
         }
-       
+
+        public ActionResult Cumpara(string CIV)
+        {
+            var repo = new ReadRepository();
+            var masina = repo.CautaMasina(CIV);
+            //masina.stare = proiect_pssc.Model.Masina.StareMasina.Rezervata;
+            var comandaCumparaMasina = new ComandaVindeMasina();
+            comandaCumparaMasina.Masina = masina;
+            MagistralaComenzi.Instanta.Value.Trimite(comandaCumparaMasina);
+            var receive = new Receive();
+            var mesaj = receive.PrimesteEveiment();
+            ViewBag.masaj = mesaj;
+            return View("HomePage");
+        }
+
 
         [HttpPost]
         public ActionResult AdaugaMasina(MasinaMVC mVC)
         {
-            //MagistralaComenzi.Instanta.Value.InregistreazaProcesatoareStandard();
-            //MagistralaEvenimente.Instanta.Value.InregistreazaProcesatoareStandard();
-            //MagistralaEvenimente.Instanta.Value.InchideInregistrarea();
-            //Berilna
+
             var comandaAdaugaMasina = new ComandaAdaugaMasina();
             Masina m = new Masina(new PlainText(mVC.CIV),mVC.Tip,new PlainText(mVC.Marca.ToString()),new PlainText(mVC.Model.ToString()),
                 new PlainText(mVC.An),new PlainText(mVC.Pret.ToString()),new PlainText(mVC.Kilometraj),new PlainText(mVC.Motorizare),
@@ -100,6 +115,11 @@ namespace IterfataUtilizator.Controllers
             comandaAdaugaMasina.Masina1 = m;
          
                 MagistralaComenzi.Instanta.Value.Trimite(comandaAdaugaMasina);
+
+            var receive = new Receive();
+         
+            var mesaj = receive.PrimesteEveiment();
+            ViewBag.masaj = mesaj;
             return View("HomePage");
         }
 
@@ -141,8 +161,12 @@ namespace IterfataUtilizator.Controllers
         public ActionResult AfisareMasini()
         {
             var repo = new ReadRepository();
-            masinaRepo = repo.IncarcaListaMasini();
+            var masinaRepo = repo.IncarcaListaMasini22222();
+           // masinaRepo = repo.IncarcaListaMasini();
+            var etc = masinaRepo.Select(_ => _.CIV.ToString()).Distinct().ToList();
             var eventRepo = repo.IncarcaListaDeEvenimente();
+            //   List<Masina> nouaMasina = masinaRepo.Select(_=>_.CIV).Distinct().ToList();
+         //   var distincIndex = masinaRepo.FindIndex(_ => _.CIV.Text).Distinct();
             List<MasinaMVC> masina = new List<MasinaMVC>();
             foreach (Masina x in masinaRepo)
             {
@@ -167,6 +191,14 @@ namespace IterfataUtilizator.Controllers
         {
             var repo = new ReadRepository();
             masinaRepo = repo.IncarcaListaMasini();
+           // masinaRepo.Sort();
+
+            var id = repo.IncarcaIdRadacina();
+            //for (int i=0; i < masinaRepo.Count();i++)
+            //{
+            //    if(masinaRepo[i].CIV.ToString().Equals(masinaRepo[i+1].CIV.ToString()))
+            //        masina
+            //}
             var eventRepo = repo.IncarcaListaDeEvenimente();
             List<MasinaMVC> masina = new List<MasinaMVC>();
             foreach (Masina x in masinaRepo)

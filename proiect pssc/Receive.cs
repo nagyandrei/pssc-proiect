@@ -24,7 +24,7 @@ namespace proiect_pssc
                      message = Encoding.UTF8.GetString(body);
                   //  Console.WriteLine(" [x] Received {0}", message);
                 };
-                channel.BasicConsume(queue: "ParcAuto", autoAck: true, consumer: consumer);
+                channel.BasicConsume(queue: "ParcAuto", autoAck: false, consumer: consumer);
 
               //  Console.WriteLine(" Press [enter] to exit.");
                // Console.ReadLine();
