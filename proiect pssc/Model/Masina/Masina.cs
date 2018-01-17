@@ -50,6 +50,15 @@ namespace Model.Masina
         public Masina()
         { }
 
+        public Masina(Masina masina, MagistralaEvenimente magistrala = null)
+        {
+            _magistralaEveniment = magistrala;
+            if (masina.CIV == null) throw new NullReferenceException("Id masina invalid");
+            var e = new EvenimentGeneric<Masina>(masina.CIV, TipEveniment.AdaugareMasina, masina);
+            Aplica1(e);
+          //  PublicaEveniment(e);
+        }
+
         public Masina(IEnumerable<Eveniment> evenimente)
         {
             foreach (var e in evenimente)
@@ -65,9 +74,18 @@ namespace Model.Masina
             PublicaEveniment(e);
 
         }
-
         private void Aplica(EvenimentGeneric<Masina> e)
         {
+          
+            stare = StareMasina.InStoc;
+        }
+
+
+        private void Aplica1(EvenimentGeneric<Masina> e)
+        {
+            CIV = e.Detalii.CIV;
+            Tip = e.Detalii.Tip;
+            Marca = e.Detalii.Marca;
             stare = StareMasina.InStoc;
         }
 
@@ -146,16 +164,16 @@ namespace Model.Masina
             switch (e.Tip)
             {
                 case TipEveniment.AdaugareMasina:
-                    Aplica(e.ToGeneric<Masina>());
+                    Aplica1(e.ToGeneric<Masina>());
                     break;
                 case TipEveniment.CautareMasina:
-                    Aplica(e.ToGeneric<Masina>());
+                    Aplica1(e.ToGeneric<Masina>());
                     break;
                 case TipEveniment.EditareMasina:
-                    Aplica(e.ToGeneric<Masina>());
+                    Aplica1(e.ToGeneric<Masina>());
                     break;
                 case TipEveniment.NogocierePret:
-                    Aplica(e.ToGeneric<Masina>());
+                    Aplica1(e.ToGeneric<Masina>());
                     break;
                 case TipEveniment.RezervaMasina:
                     AplicaRezervare(e.ToGeneric<Masina>());

@@ -1,0 +1,25 @@
+C:\Users\Andrei\Documents\GitHub\pssc-proiect\UnitTest_MVC\bin\Debug\netcoreapp2.0\xunit.runner.visualstudio.dotnetcore.testadapter.dll
+C:\Users\Andrei\Documents\GitHub\pssc-proiect\UnitTest_MVC\bin\Debug\netcoreapp2.0\xunit.runner.utility.netstandard15.dll
+C:\Users\Andrei\Documents\GitHub\pssc-proiect\UnitTest_MVC\bin\Debug\netcoreapp2.0\xunit.runner.reporters.netstandard15.dll
+C:\Users\Andrei\Documents\GitHub\pssc-proiect\UnitTest_MVC\bin\Debug\netcoreapp2.0\UnitTest_MVC.deps.json
+C:\Users\Andrei\Documents\GitHub\pssc-proiect\UnitTest_MVC\bin\Debug\netcoreapp2.0\UnitTest_MVC.runtimeconfig.json
+C:\Users\Andrei\Documents\GitHub\pssc-proiect\UnitTest_MVC\bin\Debug\netcoreapp2.0\UnitTest_MVC.runtimeconfig.dev.json
+C:\Users\Andrei\Documents\GitHub\pssc-proiect\UnitTest_MVC\bin\Debug\netcoreapp2.0\UnitTest_MVC.dll
+C:\Users\Andrei\Documents\GitHub\pssc-proiect\UnitTest_MVC\obj\Debug\netcoreapp2.0\UnitTest_MVC.csproj.CoreCompileInputs.cache
+C:\Users\Andrei\Documents\GitHub\pssc-proiect\UnitTest_MVC\obj\Debug\netcoreapp2.0\UnitTest_MVC.AssemblyInfoInputs.cache
+C:\Users\Andrei\Documents\GitHub\pssc-proiect\UnitTest_MVC\obj\Debug\netcoreapp2.0\UnitTest_MVC.AssemblyInfo.cs
+C:\Users\Andrei\Documents\GitHub\pssc-proiect\UnitTest_MVC\bin\Debug\netcoreapp2.0\UnitTest_MVC.pdb
+C:\Users\Andrei\Documents\GitHub\pssc-proiect\UnitTest_MVC\obj\Debug\netcoreapp2.0\UnitTest_MVC.csprojResolveAssemblyReference.cache
+C:\Users\Andrei\Documents\GitHub\pssc-proiect\UnitTest_MVC\obj\Debug\netcoreapp2.0\UnitTest_MVC.dll
+C:\Users\Andrei\Documents\GitHub\pssc-proiect\UnitTest_MVC\obj\Debug\netcoreapp2.0\UnitTest_MVC.pdb
+C:\Users\Andrei\Documents\GitHub\pssc-proiect\UnitTest_MVC\bin\Debug\netcoreapp2.0\ApplicationInsights.config
+C:\Users\Andrei\Documents\GitHub\pssc-proiect\UnitTest_MVC\bin\Debug\netcoreapp2.0\Helpers.dll
+C:\Users\Andrei\Documents\GitHub\pssc-proiect\UnitTest_MVC\bin\Debug\netcoreapp2.0\IterfataUtilizator.dll
+C:\Users\Andrei\Documents\GitHub\pssc-proiect\UnitTest_MVC\bin\Debug\netcoreapp2.0\proiect pssc.exe
+C:\Users\Andrei\Documents\GitHub\pssc-proiect\UnitTest_MVC\bin\Debug\netcoreapp2.0\System.Web.Optimization.dll
+C:\Users\Andrei\Documents\GitHub\pssc-proiect\UnitTest_MVC\bin\Debug\netcoreapp2.0\IterfataUtilizator.pdb
+C:\Users\Andrei\Documents\GitHub\pssc-proiect\UnitTest_MVC\bin\Debug\netcoreapp2.0\IterfataUtilizator.dll.config
+C:\Users\Andrei\Documents\GitHub\pssc-proiect\UnitTest_MVC\bin\Debug\netcoreapp2.0\proiect pssc.pdb
+C:\Users\Andrei\Documents\GitHub\pssc-proiect\UnitTest_MVC\bin\Debug\netcoreapp2.0\proiect pssc.exe.config
+C:\Users\Andrei\Documents\GitHub\pssc-proiect\UnitTest_MVC\bin\Debug\netcoreapp2.0\Helpers.pdb
+C:\Users\Andrei\Documents\GitHub\pssc-proiect\UnitTest_MVC\bin\Debug\netcoreapp2.0\System.Web.Optimization.xml

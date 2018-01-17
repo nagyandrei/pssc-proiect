@@ -1,0 +1,8 @@
+C:\Users\Andrei\Documents\GitHub\pssc-proiect\.vs\proiect pssc\lut\0\b\IterfataUtilizator\bin\ApplicationInsights.config
+C:\Users\Andrei\Documents\GitHub\pssc-proiect\.vs\proiect pssc\lut\0\b\IterfataUtilizator\bin\IterfataUtilizator.dll.config
+C:\Users\Andrei\Documents\GitHub\pssc-proiect\.vs\proiect pssc\lut\0\b\IterfataUtilizator\bin\IterfataUtilizator.dll
+C:\Users\Andrei\Documents\GitHub\pssc-proiect\.vs\proiect pssc\lut\0\b\IterfataUtilizator\bin\IterfataUtilizator.pdb
+C:\Users\Andrei\Documents\GitHub\pssc-proiect\.vs\proiect pssc\lut\0\i\IterfataUtilizator\Debug\IterfataUtilizator.csprojResolveAssemblyReference.cache
+C:\Users\Andrei\Documents\GitHub\pssc-proiect\.vs\proiect pssc\lut\0\i\IterfataUtilizator\Debug\IterfataUtilizator.csproj.CoreCompileInputs.cache
+C:\Users\Andrei\Documents\GitHub\pssc-proiect\.vs\proiect pssc\lut\0\i\IterfataUtilizator\Debug\IterfataUtilizator.dll
+C:\Users\Andrei\Documents\GitHub\pssc-proiect\.vs\proiect pssc\lut\0\i\IterfataUtilizator\Debug\IterfataUtilizator.pdb

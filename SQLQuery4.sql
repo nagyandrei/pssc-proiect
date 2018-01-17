@@ -1,0 +1,1 @@
+﻿select top 1 * from ParcAuto where IdRadacina=7 order by ROW_NUMBER() over(partition by idRadacina) desc

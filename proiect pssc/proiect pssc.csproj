@@ -55,6 +55,7 @@
     <Compile Include="Evenimente\ProcesatorEditeazaMasina.cs" />
     <Compile Include="Evenimente\ProcesatorRezervMasina.cs" />
     <Compile Include="Evenimente\ProcesatorVindeMasina.cs" />
+    <Compile Include="IReadRepository.cs" />
     <Compile Include="Model\Masina\MasinaDes.cs" />
     <Compile Include="Receive.cs" />
     <Compile Include="Send.cs" />

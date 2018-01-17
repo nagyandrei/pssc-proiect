@@ -1,0 +1,14 @@
+C:\Users\Andrei\Documents\GitHub\pssc-proiect\.vs\proiect pssc\lut\0\b\UnitTest_MVC\Debug\netcoreapp2.0\xunit.runner.visualstudio.dotnetcore.testadapter.dll
+C:\Users\Andrei\Documents\GitHub\pssc-proiect\.vs\proiect pssc\lut\0\b\UnitTest_MVC\Debug\netcoreapp2.0\xunit.runner.utility.netstandard15.dll
+C:\Users\Andrei\Documents\GitHub\pssc-proiect\.vs\proiect pssc\lut\0\b\UnitTest_MVC\Debug\netcoreapp2.0\xunit.runner.reporters.netstandard15.dll
+C:\Users\Andrei\Documents\GitHub\pssc-proiect\.vs\proiect pssc\lut\0\b\UnitTest_MVC\Debug\netcoreapp2.0\UnitTest_MVC.deps.json
+C:\Users\Andrei\Documents\GitHub\pssc-proiect\.vs\proiect pssc\lut\0\b\UnitTest_MVC\Debug\netcoreapp2.0\UnitTest_MVC.runtimeconfig.json
+C:\Users\Andrei\Documents\GitHub\pssc-proiect\.vs\proiect pssc\lut\0\b\UnitTest_MVC\Debug\netcoreapp2.0\UnitTest_MVC.runtimeconfig.dev.json
+C:\Users\Andrei\Documents\GitHub\pssc-proiect\.vs\proiect pssc\lut\0\b\UnitTest_MVC\Debug\netcoreapp2.0\UnitTest_MVC.dll
+C:\Users\Andrei\Documents\GitHub\pssc-proiect\.vs\proiect pssc\lut\0\b\UnitTest_MVC\Debug\netcoreapp2.0\UnitTest_MVC.pdb
+C:\Users\Andrei\Documents\GitHub\pssc-proiect\.vs\proiect pssc\lut\0\i\UnitTest_MVC\Debug\netcoreapp2.0\UnitTest_MVC.csprojResolveAssemblyReference.cache
+C:\Users\Andrei\Documents\GitHub\pssc-proiect\.vs\proiect pssc\lut\0\i\UnitTest_MVC\Debug\netcoreapp2.0\UnitTest_MVC.csproj.CoreCompileInputs.cache
+C:\Users\Andrei\Documents\GitHub\pssc-proiect\.vs\proiect pssc\lut\0\i\UnitTest_MVC\Debug\netcoreapp2.0\UnitTest_MVC.AssemblyInfoInputs.cache
+C:\Users\Andrei\Documents\GitHub\pssc-proiect\.vs\proiect pssc\lut\0\i\UnitTest_MVC\Debug\netcoreapp2.0\UnitTest_MVC.AssemblyInfo.cs
+C:\Users\Andrei\Documents\GitHub\pssc-proiect\.vs\proiect pssc\lut\0\i\UnitTest_MVC\Debug\netcoreapp2.0\UnitTest_MVC.dll
+C:\Users\Andrei\Documents\GitHub\pssc-proiect\.vs\proiect pssc\lut\0\i\UnitTest_MVC\Debug\netcoreapp2.0\UnitTest_MVC.pdb

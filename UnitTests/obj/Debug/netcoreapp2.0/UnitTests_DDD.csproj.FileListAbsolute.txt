@@ -1,0 +1,19 @@
+C:\Users\Andrei\Documents\GitHub\pssc-proiect\UnitTests\bin\Debug\netcoreapp2.0\xunit.runner.visualstudio.dotnetcore.testadapter.dll
+C:\Users\Andrei\Documents\GitHub\pssc-proiect\UnitTests\bin\Debug\netcoreapp2.0\xunit.runner.utility.netstandard15.dll
+C:\Users\Andrei\Documents\GitHub\pssc-proiect\UnitTests\bin\Debug\netcoreapp2.0\xunit.runner.reporters.netstandard15.dll
+C:\Users\Andrei\Documents\GitHub\pssc-proiect\UnitTests\bin\Debug\netcoreapp2.0\UnitTests_DDD.deps.json
+C:\Users\Andrei\Documents\GitHub\pssc-proiect\UnitTests\bin\Debug\netcoreapp2.0\UnitTests_DDD.runtimeconfig.json
+C:\Users\Andrei\Documents\GitHub\pssc-proiect\UnitTests\bin\Debug\netcoreapp2.0\UnitTests_DDD.runtimeconfig.dev.json
+C:\Users\Andrei\Documents\GitHub\pssc-proiect\UnitTests\bin\Debug\netcoreapp2.0\UnitTests_DDD.dll
+C:\Users\Andrei\Documents\GitHub\pssc-proiect\UnitTests\bin\Debug\netcoreapp2.0\UnitTests_DDD.pdb
+C:\Users\Andrei\Documents\GitHub\pssc-proiect\UnitTests\bin\Debug\netcoreapp2.0\Helpers.dll
+C:\Users\Andrei\Documents\GitHub\pssc-proiect\UnitTests\bin\Debug\netcoreapp2.0\proiect pssc.exe
+C:\Users\Andrei\Documents\GitHub\pssc-proiect\UnitTests\bin\Debug\netcoreapp2.0\proiect pssc.pdb
+C:\Users\Andrei\Documents\GitHub\pssc-proiect\UnitTests\bin\Debug\netcoreapp2.0\proiect pssc.exe.config
+C:\Users\Andrei\Documents\GitHub\pssc-proiect\UnitTests\bin\Debug\netcoreapp2.0\Helpers.pdb
+C:\Users\Andrei\Documents\GitHub\pssc-proiect\UnitTests\obj\Debug\netcoreapp2.0\UnitTests_DDD.csprojResolveAssemblyReference.cache
+C:\Users\Andrei\Documents\GitHub\pssc-proiect\UnitTests\obj\Debug\netcoreapp2.0\UnitTests_DDD.csproj.CoreCompileInputs.cache
+C:\Users\Andrei\Documents\GitHub\pssc-proiect\UnitTests\obj\Debug\netcoreapp2.0\UnitTests_DDD.AssemblyInfoInputs.cache
+C:\Users\Andrei\Documents\GitHub\pssc-proiect\UnitTests\obj\Debug\netcoreapp2.0\UnitTests_DDD.AssemblyInfo.cs
+C:\Users\Andrei\Documents\GitHub\pssc-proiect\UnitTests\obj\Debug\netcoreapp2.0\UnitTests_DDD.dll
+C:\Users\Andrei\Documents\GitHub\pssc-proiect\UnitTests\obj\Debug\netcoreapp2.0\UnitTests_DDD.pdb

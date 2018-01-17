@@ -19,7 +19,18 @@ namespace IterfataUtilizator.Controllers
     {
         List<Masina> masinaRepo = new List<Masina>();
         List<MasinaMVC> masinaMVC = new List<MasinaMVC>();
-       
+
+
+        private ReadRepository _readRepo;
+        private WriteRepository _writeRepo;
+
+        
+        public HomeController(ReadRepository readRepo, WriteRepository writeRepo)
+        {
+            _readRepo = readRepo;
+            _writeRepo = writeRepo;
+        }
+
         public ActionResult Index()
         {
             return View("Login");

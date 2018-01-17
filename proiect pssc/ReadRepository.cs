@@ -14,7 +14,7 @@ using System.Threading.Tasks;
 
 namespace proiect_pssc
 {
-    public class ReadRepository
+    public class ReadRepository:IReadRepository
     {
         public Masina CautaMasina(string idRadacina)
         {

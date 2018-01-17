@@ -1,0 +1,8 @@
+C:\Users\Andrei\Documents\GitHub\pssc-proiect\.vs\proiect pssc\lut\0\b\proiect pssc\bin\Debug\proiect pssc.exe.config
+C:\Users\Andrei\Documents\GitHub\pssc-proiect\.vs\proiect pssc\lut\0\b\proiect pssc\bin\Debug\proiect pssc.exe
+C:\Users\Andrei\Documents\GitHub\pssc-proiect\.vs\proiect pssc\lut\0\b\proiect pssc\bin\Debug\proiect pssc.pdb
+C:\Users\Andrei\Documents\GitHub\pssc-proiect\.vs\proiect pssc\lut\0\i\proiect pssc\Debug\proiect pssc.csprojResolveAssemblyReference.cache
+C:\Users\Andrei\Documents\GitHub\pssc-proiect\.vs\proiect pssc\lut\0\i\proiect pssc\Debug\proiect pssc.csproj.proiect pssc.exe.config
+C:\Users\Andrei\Documents\GitHub\pssc-proiect\.vs\proiect pssc\lut\0\i\proiect pssc\Debug\proiect pssc.csproj.CoreCompileInputs.cache
+C:\Users\Andrei\Documents\GitHub\pssc-proiect\.vs\proiect pssc\lut\0\i\proiect pssc\Debug\proiect pssc.exe
+C:\Users\Andrei\Documents\GitHub\pssc-proiect\.vs\proiect pssc\lut\0\i\proiect pssc\Debug\proiect pssc.pdb

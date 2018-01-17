@@ -1,0 +1,1 @@
+﻿select top 1 *  from ParcAuto where IdRadacina=12 order by IdEveniment asc
