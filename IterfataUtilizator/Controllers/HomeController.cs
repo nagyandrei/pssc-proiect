@@ -94,7 +94,7 @@ namespace IterfataUtilizator.Controllers
             comandaRezervaMasina.Masina=masina;
             MagistralaComenzi.Instanta.Value.Trimite(comandaRezervaMasina);
             var receive = new Receive();
-            var mesaj = receive.PrimesteEveiment();
+            var mesaj = receive.PrimesteMesaj();
             ViewBag.masaj = mesaj;
             return View("HomePage");
         }
@@ -108,7 +108,7 @@ namespace IterfataUtilizator.Controllers
             comandaCumparaMasina.Masina = masina;
             MagistralaComenzi.Instanta.Value.Trimite(comandaCumparaMasina);
             var receive = new Receive();
-            var mesaj = receive.PrimesteEveiment();
+            var mesaj = receive.PrimesteMesaj();
             ViewBag.masaj = mesaj;
             return View("HomePage");
         }
@@ -129,7 +129,7 @@ namespace IterfataUtilizator.Controllers
 
             var receive = new Receive();
          
-            var mesaj = receive.PrimesteEveiment();
+            var mesaj = receive.PrimesteMesaj();
             ViewBag.masaj = mesaj;
             return View("HomePage");
         }

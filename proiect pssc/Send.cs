@@ -11,7 +11,7 @@ namespace proiect_pssc
 {
     public class Send
     {
-        public void TrimiteEveniment(string mesaj)
+        public void TrimiteMesaj(string mesaj)
         {
             var factory = new ConnectionFactory() { HostName = "localhost" };
             using (var connection = factory.CreateConnection())

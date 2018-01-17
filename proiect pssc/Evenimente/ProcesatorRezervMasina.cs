@@ -13,7 +13,7 @@ namespace proiect_pssc.Evenimente
 
             var repo = new WriteRepository();
             var trimite = new Send();
-            trimite.TrimiteEveniment("Masina a fost rezervata");
+            trimite.TrimiteMesaj("Masina a fost rezervata");
             repo.SalvareEvenimente(e);
 
         }

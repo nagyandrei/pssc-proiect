@@ -8,7 +8,7 @@ namespace proiect_pssc
 {
     public class Receive
     {
-        public string PrimesteEveiment()
+        public string PrimesteMesaj()
         {
             string message = "";
             var factory = new ConnectionFactory() { HostName = "localhost" };
@@ -22,12 +22,10 @@ namespace proiect_pssc
                 {
                     var body = ea.Body;
                      message = Encoding.UTF8.GetString(body);
-                  //  Console.WriteLine(" [x] Received {0}", message);
+               
                 };
                 channel.BasicConsume(queue: "ParcAuto", autoAck: false, consumer: consumer);
 
-              //  Console.WriteLine(" Press [enter] to exit.");
-               // Console.ReadLine();
             }
             return message;
         }

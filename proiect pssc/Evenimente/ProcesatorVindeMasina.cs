@@ -13,7 +13,7 @@ namespace proiect_pssc.Evenimente
 
             var repo = new WriteRepository();
             var trimite = new Send();
-            trimite.TrimiteEveniment("Masina a fost cumparata");
+            trimite.TrimiteMesaj("Masina a fost cumparata");
             repo.SalvareEvenimente(e);
 
         }
